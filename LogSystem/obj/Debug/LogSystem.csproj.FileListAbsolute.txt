@@ -8,3 +8,13 @@ C:\Users\jann.erhardt\source\repos\LogSystem\obj\Debug\LogSystem.csproj.Generate
 C:\Users\jann.erhardt\source\repos\LogSystem\obj\Debug\LogSystem.csproj.CoreCompileInputs.cache
 C:\Users\jann.erhardt\source\repos\LogSystem\obj\Debug\LogSystem.exe
 C:\Users\jann.erhardt\source\repos\LogSystem\obj\Debug\LogSystem.pdb
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\bin\Debug\LogSystem.exe.config
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\bin\Debug\LogSystem.exe
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\bin\Debug\LogSystem.pdb
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.csprojAssemblyReference.cache
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.Form1.resources
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.Properties.Resources.resources
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.csproj.GenerateResource.cache
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.csproj.CoreCompileInputs.cache
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.exe
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\LogSystem\obj\Debug\LogSystem.pdb
