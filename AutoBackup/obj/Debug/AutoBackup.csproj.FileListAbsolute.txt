@@ -11,3 +11,16 @@ C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBac
 C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.application
 C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.exe.manifest
 C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.application
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.exe.config
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.exe.manifest
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.application
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.exe
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\bin\Debug\AutoBackup.pdb
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.csprojAssemblyReference.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\Interop.Accessibility.dll
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.csproj.ResolveComReference.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.csproj.CoreCompileInputs.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.exe.manifest
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.application
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.exe
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\AutoBackup\obj\Debug\AutoBackup.pdb
