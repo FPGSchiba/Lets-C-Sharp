@@ -19,13 +19,14 @@ namespace AutoBackup
         const int SW_HIDE = 0;
         const int SW_SHOW = 5;
         public static string StartPathI = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\GitHub\\Igtrasil";
-        static string ZipPathI = generateZip();
+        static string ZipPathI = "";
 
         static void Main(string[] args)
         {
-            //Hide Console
-            var handle = GetConsoleWindow();
-            ShowWindow(handle, SW_HIDE);
+            //var handle = GetConsoleWindow();
+            //ShowWindow(handle, SW_HIDE);
+
+            ZipPathI = generateZip();
 
             if ((bool)Properties.Settings.Default["FirstRun"] == true)
             {
@@ -35,8 +36,9 @@ namespace AutoBackup
                 SetStartup();
             }
 
-            ZipFile.CreateFromDirectory(StartPathI, ZipPathI);
+            testOld();
 
+            ZipFile.CreateFromDirectory(StartPathI, ZipPathI);
             MessageBox.Show("Backup done");
         }
 
@@ -44,7 +46,7 @@ namespace AutoBackup
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey
             ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            rk.SetValue("backup.exe", Application.ExecutablePath);
+            rk.SetValue("AutoBackup.exe", Application.ExecutablePath);
         }
 
         public static string generateZip()
@@ -69,6 +71,29 @@ namespace AutoBackup
             }
 
             return end;
+        }
+
+        public static void testOld()
+        {
+            string path = @"E:\Backups\";
+            string[] files = Directory.GetFiles(path);
+
+            foreach(string file in files)
+            {
+                string temp = file.Replace(path + "Igtrasil", "");
+                temp = file.Replace(".zip", "");
+
+                Console.WriteLine(temp);
+
+                DateTime time = Convert.ToDateTime(temp);
+
+                if((DateTime.Now - time).TotalDays < 7)
+                {
+                    File.Delete(file);
+                }
+            }
+
+            Console.ReadKey();
         }
     }
 }
