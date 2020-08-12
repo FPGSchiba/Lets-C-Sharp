@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="AutoBackup.exe" version="1.0.0.6" publicKeyToken="82a2b392ec3b8d10" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="AutoBackup" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="AutoBackup.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AutoBackup.exe" size="7104">
+      <assemblyIdentity name="AutoBackup" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>A3Qfvsxa1UlarFEwsCc0s2llI/k2rGOO4DUK/p6KZ3E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AutoBackup.exe.config" size="915">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DXuP7tDDfI/t6USmtM94vfRtQXL81MKyaIfbUQIthSc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=UMB\jann.erhardt" issuerKeyHash="130c999126b9aeccc4619e226a4cd4f8daf60f69" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>36PQuFX3FO1kD4vlSetAcM3ZnSW3gAZAHAsWRk1Ix6s=</DigestValue></Reference></SignedInfo><SignatureValue>nHsFsmqz9LJfCfgCG/fr2lZqdAGBtA8Gb286wkBic9926fWdmRuUzWgAdmIVfCGEDHuk66EZKlCq+Mb9f051jy9yiEm+rQXsYeCTRqTsgVr/p9+pZ7NuAVwdU47//vj/Bt1HwZfEdzsR1GmrCI4SsgKEdOb1cwC7A5YbuUAPE3M=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>thA2Fg3i8b0d4MUeEh5qkHnf3H17yZoHDp8cu4tjpniCMFzIGSDQMYPmDaEHkeBAnPzz0bSKkuYm8DucOmSbfmaM6fhSPL44qXtfpH1Hg4yzw9sEfK3YO0TsaLt2PZDcXmZbhFPdMX2yDWxehxdF3JwCzI6Obc1QMMgEewHh7q0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="abc7484d46160b1c400680b7259dd9cd7040eb49e58b0f64ed14f755b8d0a3df" Description="" Url=""><as:assemblyIdentity name="AutoBackup.exe" version="1.0.0.6" publicKeyToken="82a2b392ec3b8d10" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=UMB\jann.erhardt</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>m+UdUHbFuUbkOob0T/WxFWSnHzglm3VSTuXB9Va0jt0=</DigestValue></Reference></SignedInfo><SignatureValue>oL06E+VsI6ly+7QEaFcnRSu4USO5uyB4Jo2Ru/crNN/AeTahZ3RJ4ZcrBqjQ2gFCyOk8TvdFDC0F1r2KqfFmHGyqH9+TxPamOzHHYBTnptW1CfgNmgt6hlZSDsWTIEobOyNQlI0nbdDy8rx8ca+Sv++8Spcvxp+KYLcwdnIrTV8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>thA2Fg3i8b0d4MUeEh5qkHnf3H17yZoHDp8cu4tjpniCMFzIGSDQMYPmDaEHkeBAnPzz0bSKkuYm8DucOmSbfmaM6fhSPL44qXtfpH1Hg4yzw9sEfK3YO0TsaLt2PZDcXmZbhFPdMX2yDWxehxdF3JwCzI6Obc1QMMgEewHh7q0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQHa5K07G5TJ5MYTRKrgsMZTANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAAVQBNAEIAXABqAGEAbgBuAC4AZQByAGgAYQByAGQAdDAeFw0yMDA4MTIwNzEyNTRaFw0yMTA4MTIxMzEyNTRaMCsxKTAnBgNVBAMeIABVAE0AQgBcAGoAYQBuAG4ALgBlAHIAaABhAHIAZAB0MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2EDYWDeLxvR3gxR4SHmqQed/cfXvJmgcOnxy7i2OmeIIwXMgZINAxg+YNoQeR4ECc/PPRtIqS5ibwO5w6ZJt+Zozp+FI8vjipe1+kfUeDjLPD2wR8rdg7ROxou3Y9kNxeZluEU90xfbINbF6HF0XcnALMjo5tzVAwyAR7AeHurQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAHuEqgRwGXnhGfADWSeNNJOf54KMUkKoM4s4tMSvt/g0y8BIoi4vt53KkR3wNSgJE8zSOVomXId/MR15f5LBioTOloWhJGdJWTXYkjpXCsfp9e4nJkb1MAMzi/oBRAmrFneHourpbXilLIzLtav6ncbousSQqhSzGF0Tbkaob/9E</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
