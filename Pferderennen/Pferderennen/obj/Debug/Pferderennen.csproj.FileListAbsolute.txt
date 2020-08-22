@@ -1,0 +1,10 @@
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\Pferderennen.exe.config
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\Pferderennen.exe
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\Pferderennen.pdb
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.csprojAssemblyReference.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.Form1.resources
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.Properties.Resources.resources
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.csproj.GenerateResource.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.csproj.CoreCompileInputs.cache
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.exe
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.pdb
