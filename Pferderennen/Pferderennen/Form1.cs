@@ -19,12 +19,12 @@ namespace Pferderennen
 
         public bool isNumber;
 
-        public int Ruedi;
-        public int Fredi;
-        public int Hans;
-        public int Peter;
-        public int Fridolin;
-        public int Bertha;
+        public int RuediEinsatz;
+        public int FrediEinsatz;
+        public int HansEinsatz;
+        public int PeterEinsatz;
+        public int FridolinEinsatz;
+        public int BerthaEinsatz;
 
         public int RuediSpeed;
         public int FrediSpeed;
@@ -39,12 +39,12 @@ namespace Pferderennen
         {
             try
             {
-                Ruedi = Convert.ToInt32(tB_Ruedi.Text);
-                Fredi = Convert.ToInt32(tB_Fredi.Text);
-                Hans = Convert.ToInt32(tB_Hans.Text);
-                Peter = Convert.ToInt32(tB_Peter.Text);
-                Fridolin = Convert.ToInt32(tB_Fridolin.Text);
-                Bertha = Convert.ToInt32(tB_Bertha.Text);
+                RuediEinsatz = Convert.ToInt32(tB_Ruedi.Text);
+                FrediEinsatz = Convert.ToInt32(tB_Fredi.Text);
+                HansEinsatz = Convert.ToInt32(tB_Hans.Text);
+                PeterEinsatz = Convert.ToInt32(tB_Peter.Text);
+                FridolinEinsatz = Convert.ToInt32(tB_Fridolin.Text);
+                BerthaEinsatz = Convert.ToInt32(tB_Bertha.Text);
 
                 isNumber = true;
             }
@@ -86,9 +86,9 @@ namespace Pferderennen
 
                 }
             }
-            catch(Exception e)
+            catch(Exception er)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(er.Message);
             }
 
             if (isNumber)
@@ -109,7 +109,21 @@ namespace Pferderennen
 
         public void racePrep()
         {
-            MessageBox.Show("Gut men young");
+            RuediSpeed += calcSpeed();
+            FrediSpeed += calcSpeed();
+            HansSpeed += calcSpeed();
+            PeterSpeed += calcSpeed();
+            FridolinSpeed += calcSpeed();
+            BerthaSpeed += calcSpeed();
+
+            //Start next Form with the Params needed
+        }
+
+        public int calcSpeed()
+        {
+            Random rand = new Random();
+            int end = rand.Next(100, 200);
+            return end;
         }
     }
 }
