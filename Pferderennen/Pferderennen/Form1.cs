@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,10 +50,12 @@ namespace Pferderennen
 
                 isNumber = true;
             }
-            catch
+            catch(Exception er)
             {
                 MessageBox.Show("Bitte nur ganze Zahlen als Einsatz eintragen.");
                 Clear();
+
+                Logger.ErrorLog(er.Message);
 
                 isNumber = false;
             }
@@ -64,22 +68,22 @@ namespace Pferderennen
                     case -1:
                         break;
                     case 0:
-                        RuediSpeed += 100;
+                        RuediSpeed += 50;
                         break;
                     case 1:
-                        FrediSpeed += 100;
+                        FrediSpeed += 50;
                         break;
                     case 2:
-                        HansSpeed += 100;
+                        HansSpeed += 50;
                         break;
                     case 3:
-                        PeterSpeed += 100;
+                        PeterSpeed += 50;
                         break;
                     case 4:
-                        FridolinSpeed += 100;
+                        FridolinSpeed += 50;
                         break;
                     case 5:
-                        BerthaSpeed += 100;
+                        BerthaSpeed += 50;
                         break;
                     default:
                         break;
@@ -89,6 +93,7 @@ namespace Pferderennen
             catch(Exception er)
             {
                 MessageBox.Show(er.Message);
+                Logger.ErrorLog(er.Message);
             }
 
             if (isNumber)
@@ -109,21 +114,17 @@ namespace Pferderennen
 
         public void racePrep()
         {
-            RuediSpeed += calcSpeed();
-            FrediSpeed += calcSpeed();
-            HansSpeed += calcSpeed();
-            PeterSpeed += calcSpeed();
-            FridolinSpeed += calcSpeed();
-            BerthaSpeed += calcSpeed();
-
             //Start next Form with the Params needed
+            Thread thread = new Thread(startRace);
+            thread.Start();
+
         }
 
-        public int calcSpeed()
+        public void startRace()
         {
-            Random rand = new Random();
-            int end = rand.Next(100, 200);
-            return end;
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Race());
         }
     }
 }

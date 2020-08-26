@@ -98,7 +98,7 @@
             this.tB_Fredi.Location = new System.Drawing.Point(283, 243);
             this.tB_Fredi.Name = "tB_Fredi";
             this.tB_Fredi.Size = new System.Drawing.Size(135, 26);
-            this.tB_Fredi.TabIndex = 2;
+            this.tB_Fredi.TabIndex = 1;
             // 
             // label3
             // 
@@ -114,7 +114,7 @@
             this.tB_Hans.Location = new System.Drawing.Point(281, 378);
             this.tB_Hans.Name = "tB_Hans";
             this.tB_Hans.Size = new System.Drawing.Size(135, 26);
-            this.tB_Hans.TabIndex = 4;
+            this.tB_Hans.TabIndex = 2;
             // 
             // label4
             // 
@@ -175,7 +175,7 @@
             this.button1.Location = new System.Drawing.Point(471, 869);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 32);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Rennen Starten";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -244,7 +244,7 @@
             this.tB_Peter.Location = new System.Drawing.Point(283, 519);
             this.tB_Peter.Name = "tB_Peter";
             this.tB_Peter.Size = new System.Drawing.Size(135, 26);
-            this.tB_Peter.TabIndex = 16;
+            this.tB_Peter.TabIndex = 3;
             // 
             // pictureBox5
             // 
@@ -286,7 +286,7 @@
             this.tB_Fridolin.Location = new System.Drawing.Point(283, 652);
             this.tB_Fridolin.Name = "tB_Fridolin";
             this.tB_Fridolin.Size = new System.Drawing.Size(135, 26);
-            this.tB_Fridolin.TabIndex = 21;
+            this.tB_Fridolin.TabIndex = 4;
             // 
             // pictureBox6
             // 
@@ -328,7 +328,7 @@
             this.tB_Bertha.Location = new System.Drawing.Point(281, 788);
             this.tB_Bertha.Name = "tB_Bertha";
             this.tB_Bertha.Size = new System.Drawing.Size(135, 26);
-            this.tB_Bertha.TabIndex = 26;
+            this.tB_Bertha.TabIndex = 5;
             // 
             // Win_Select
             // 
@@ -341,7 +341,7 @@
             this.Win_Select.Location = new System.Drawing.Point(298, 869);
             this.Win_Select.Name = "Win_Select";
             this.Win_Select.Size = new System.Drawing.Size(120, 26);
-            this.Win_Select.TabIndex = 32;
+            this.Win_Select.TabIndex = 6;
             this.Win_Select.Text = "Spezial";
             // 
             // Form1
