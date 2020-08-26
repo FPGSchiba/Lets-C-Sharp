@@ -35,12 +35,6 @@
             this.pB_Peter = new System.Windows.Forms.ProgressBar();
             this.pB_Fridolin = new System.Windows.Forms.ProgressBar();
             this.pB_Bertha = new System.Windows.Forms.ProgressBar();
-            this.posRuedi = new System.Windows.Forms.Label();
-            this.posFredi = new System.Windows.Forms.Label();
-            this.posHans = new System.Windows.Forms.Label();
-            this.posPeter = new System.Windows.Forms.Label();
-            this.posFridolin = new System.Windows.Forms.Label();
-            this.posBertha = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,7 +51,7 @@
             this.pB_Ruedi.MarqueeAnimationSpeed = 10;
             this.pB_Ruedi.Maximum = 10000;
             this.pB_Ruedi.Name = "pB_Ruedi";
-            this.pB_Ruedi.Size = new System.Drawing.Size(886, 35);
+            this.pB_Ruedi.Size = new System.Drawing.Size(1185, 35);
             this.pB_Ruedi.Step = 1;
             this.pB_Ruedi.TabIndex = 0;
             // 
@@ -68,7 +62,7 @@
             this.pB_Fredi.MarqueeAnimationSpeed = 10;
             this.pB_Fredi.Maximum = 10000;
             this.pB_Fredi.Name = "pB_Fredi";
-            this.pB_Fredi.Size = new System.Drawing.Size(886, 35);
+            this.pB_Fredi.Size = new System.Drawing.Size(1185, 35);
             this.pB_Fredi.Step = 1;
             this.pB_Fredi.TabIndex = 1;
             // 
@@ -79,7 +73,7 @@
             this.pB_Hans.MarqueeAnimationSpeed = 10;
             this.pB_Hans.Maximum = 10000;
             this.pB_Hans.Name = "pB_Hans";
-            this.pB_Hans.Size = new System.Drawing.Size(886, 35);
+            this.pB_Hans.Size = new System.Drawing.Size(1185, 35);
             this.pB_Hans.Step = 1;
             this.pB_Hans.TabIndex = 2;
             // 
@@ -90,7 +84,7 @@
             this.pB_Peter.MarqueeAnimationSpeed = 10;
             this.pB_Peter.Maximum = 10000;
             this.pB_Peter.Name = "pB_Peter";
-            this.pB_Peter.Size = new System.Drawing.Size(886, 35);
+            this.pB_Peter.Size = new System.Drawing.Size(1185, 35);
             this.pB_Peter.Step = 1;
             this.pB_Peter.TabIndex = 3;
             // 
@@ -101,7 +95,7 @@
             this.pB_Fridolin.MarqueeAnimationSpeed = 10;
             this.pB_Fridolin.Maximum = 10000;
             this.pB_Fridolin.Name = "pB_Fridolin";
-            this.pB_Fridolin.Size = new System.Drawing.Size(886, 35);
+            this.pB_Fridolin.Size = new System.Drawing.Size(1185, 35);
             this.pB_Fridolin.Step = 1;
             this.pB_Fridolin.TabIndex = 4;
             // 
@@ -112,69 +106,9 @@
             this.pB_Bertha.MarqueeAnimationSpeed = 10;
             this.pB_Bertha.Maximum = 10000;
             this.pB_Bertha.Name = "pB_Bertha";
-            this.pB_Bertha.Size = new System.Drawing.Size(886, 35);
+            this.pB_Bertha.Size = new System.Drawing.Size(1185, 35);
             this.pB_Bertha.Step = 1;
             this.pB_Bertha.TabIndex = 5;
-            // 
-            // posRuedi
-            // 
-            this.posRuedi.AutoSize = true;
-            this.posRuedi.Location = new System.Drawing.Point(1035, 52);
-            this.posRuedi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posRuedi.Name = "posRuedi";
-            this.posRuedi.Size = new System.Drawing.Size(69, 20);
-            this.posRuedi.TabIndex = 6;
-            this.posRuedi.Text = "Position:";
-            // 
-            // posFredi
-            // 
-            this.posFredi.AutoSize = true;
-            this.posFredi.Location = new System.Drawing.Point(1035, 145);
-            this.posFredi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posFredi.Name = "posFredi";
-            this.posFredi.Size = new System.Drawing.Size(69, 20);
-            this.posFredi.TabIndex = 7;
-            this.posFredi.Text = "Position:";
-            // 
-            // posHans
-            // 
-            this.posHans.AutoSize = true;
-            this.posHans.Location = new System.Drawing.Point(1035, 229);
-            this.posHans.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posHans.Name = "posHans";
-            this.posHans.Size = new System.Drawing.Size(69, 20);
-            this.posHans.TabIndex = 8;
-            this.posHans.Text = "Position:";
-            // 
-            // posPeter
-            // 
-            this.posPeter.AutoSize = true;
-            this.posPeter.Location = new System.Drawing.Point(1035, 320);
-            this.posPeter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posPeter.Name = "posPeter";
-            this.posPeter.Size = new System.Drawing.Size(69, 20);
-            this.posPeter.TabIndex = 9;
-            this.posPeter.Text = "Position:";
-            // 
-            // posFridolin
-            // 
-            this.posFridolin.AutoSize = true;
-            this.posFridolin.Location = new System.Drawing.Point(1035, 400);
-            this.posFridolin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posFridolin.Name = "posFridolin";
-            this.posFridolin.Size = new System.Drawing.Size(69, 20);
-            this.posFridolin.TabIndex = 10;
-            this.posFridolin.Text = "Position:";
-            // 
-            // posBertha
-            // 
-            this.posBertha.AutoSize = true;
-            this.posBertha.Location = new System.Drawing.Point(1035, 489);
-            this.posBertha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.posBertha.Name = "posBertha";
-            this.posBertha.Size = new System.Drawing.Size(69, 20);
-            this.posBertha.TabIndex = 11;
-            this.posBertha.Text = "Position:";
             // 
             // label7
             // 
@@ -245,19 +179,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 597);
+            this.ClientSize = new System.Drawing.Size(1393, 597);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.posBertha);
-            this.Controls.Add(this.posFridolin);
-            this.Controls.Add(this.posPeter);
-            this.Controls.Add(this.posHans);
-            this.Controls.Add(this.posFredi);
-            this.Controls.Add(this.posRuedi);
             this.Controls.Add(this.pB_Bertha);
             this.Controls.Add(this.pB_Fridolin);
             this.Controls.Add(this.pB_Peter);
@@ -280,12 +208,6 @@
         private System.Windows.Forms.ProgressBar pB_Peter;
         private System.Windows.Forms.ProgressBar pB_Fridolin;
         private System.Windows.Forms.ProgressBar pB_Bertha;
-        private System.Windows.Forms.Label posRuedi;
-        private System.Windows.Forms.Label posFredi;
-        private System.Windows.Forms.Label posHans;
-        private System.Windows.Forms.Label posPeter;
-        private System.Windows.Forms.Label posFridolin;
-        private System.Windows.Forms.Label posBertha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
