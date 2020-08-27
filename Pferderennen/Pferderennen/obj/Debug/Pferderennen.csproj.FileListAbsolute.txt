@@ -85,3 +85,8 @@ C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bi
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.csproj.CopyComplete
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.LeaderBoard.resources
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\Pferderennen.exe.manifest
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\bin\Debug\Pferderennen.application
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.exe.manifest
+C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\Pferderennen\Pferderennen\obj\Debug\Pferderennen.application

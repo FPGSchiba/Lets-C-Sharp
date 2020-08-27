@@ -202,12 +202,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar pB_Ruedi;
-        private System.Windows.Forms.ProgressBar pB_Fredi;
-        private System.Windows.Forms.ProgressBar pB_Hans;
-        private System.Windows.Forms.ProgressBar pB_Peter;
-        private System.Windows.Forms.ProgressBar pB_Fridolin;
-        private System.Windows.Forms.ProgressBar pB_Bertha;
+        public System.Windows.Forms.ProgressBar pB_Ruedi;
+        public System.Windows.Forms.ProgressBar pB_Fredi;
+        public System.Windows.Forms.ProgressBar pB_Hans;
+        public System.Windows.Forms.ProgressBar pB_Peter;
+        public System.Windows.Forms.ProgressBar pB_Fridolin;
+        public System.Windows.Forms.ProgressBar pB_Bertha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

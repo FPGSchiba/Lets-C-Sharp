@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Pferderennen
@@ -230,6 +231,16 @@ namespace Pferderennen
             Logger.InfoLog(win + " has won in " + Math.Round(timer.Elapsed.TotalSeconds, 2) + "Seconds");
 
             MessageBox.Show(win + " hat das Rennen nach " + Math.Round(timer.Elapsed.TotalSeconds, 2) + " Sekunden gewonnen");
+
+            Thread t = new Thread(LeaderBoard);
+            t.Start();
+        }
+
+        private void LeaderBoard()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LeaderBoard());
         }
     }
 }
