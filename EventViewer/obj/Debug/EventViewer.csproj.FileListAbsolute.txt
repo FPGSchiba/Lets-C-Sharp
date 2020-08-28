@@ -1,0 +1,7 @@
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\bin\Debug\EventViewer.exe.config
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\bin\Debug\EventViewer.exe
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\bin\Debug\EventViewer.pdb
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\obj\Debug\EventViewer.csprojAssemblyReference.cache
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\obj\Debug\EventViewer.csproj.CoreCompileInputs.cache
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\obj\Debug\EventViewer.exe
+C:\Users\jann.erhardt\Documents\GitHub\Lets-C-Sharp\EventViewer\obj\Debug\EventViewer.pdb
