@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Pferderennen
@@ -22,7 +17,7 @@ namespace Pferderennen
 
         #region GetForm1Var
 
-        public int plusPerRound = 10;
+        public int plusPerRound = 20;
 
         public int RuediEinsatz;
         public int FrediEinsatz;
@@ -38,7 +33,7 @@ namespace Pferderennen
         public int FridolinSpeed;
         public int BerthaSpeed;
 
-        public int winner;
+        public int willwinner;
 
         public void getVar()
         {
@@ -53,7 +48,9 @@ namespace Pferderennen
                     FridolinEinsatz = (Application.OpenForms["Form1"] as Form1).FridolinEinsatz;
                     BerthaEinsatz = (Application.OpenForms["Form1"] as Form1).BerthaEinsatz;
 
-                    winner = (Application.OpenForms["Form1"] as Form1).winner;
+                    willwinner = (Application.OpenForms["Form1"] as Form1).winner;
+
+                    timer.Start();
 
                 }));
             }
@@ -65,6 +62,9 @@ namespace Pferderennen
         public int tickcount = 0;
         public int lastSpeed;
         public Dictionary<int, int> alle = new Dictionary<int, int>();
+        public int winner = -1;
+        public bool isFinished = false;
+        public Stopwatch timer = new Stopwatch();
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -75,14 +75,84 @@ namespace Pferderennen
             FridolinSpeed = newSpeed(4);
             BerthaSpeed = newSpeed(5);
 
-            pB_Ruedi.Value = pB_Ruedi.Value + RuediSpeed;
-            pB_Fredi.Value = pB_Fredi.Value + FrediSpeed;
-            pB_Hans.Value = pB_Hans.Value + HansSpeed;
-            pB_Peter.Value = pB_Peter.Value + PeterSpeed;
-            pB_Fridolin.Value = pB_Fridolin.Value + FridolinSpeed;
-            pB_Bertha.Value = pB_Bertha.Value + BerthaSpeed;
+            try
+            {
+                pB_Ruedi.Value = pB_Ruedi.Value + RuediSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Ruedi.Value = 10000;
+                timer1.Enabled = false;
+                winner = 0;
+                isFinished = true;
+            }
 
+            try
+            {
+                pB_Fredi.Value = pB_Fredi.Value + FrediSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Fredi.Value = 10000;
+                timer1.Enabled = false;
+                winner = 1;
+                isFinished = true;
+            }
 
+            try
+            {
+                pB_Hans.Value = pB_Hans.Value + HansSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Hans.Value = 10000;
+                timer1.Enabled = false;
+                winner = 2;
+                isFinished = true;
+            }
+
+            try
+            {
+                pB_Peter.Value = pB_Peter.Value + PeterSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Peter.Value = 10000;
+                timer1.Enabled = false;
+                winner = 3;
+                isFinished = true;
+            }
+
+            try
+            {
+                pB_Fridolin.Value = pB_Fridolin.Value + FridolinSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Fridolin.Value = 10000;
+                timer1.Enabled = false;
+                winner = 4;
+                isFinished = true;
+            }
+
+            try
+            {
+                pB_Bertha.Value = pB_Bertha.Value + BerthaSpeed;
+            }
+            catch
+            {
+                timer.Stop();
+                pB_Bertha.Value = 10000;
+                timer1.Enabled = false;
+                winner = 4;
+                isFinished = true;
+            }
+            
 
             if (tickcount == 10)
             {
@@ -96,6 +166,11 @@ namespace Pferderennen
             }
 
             tickcount++;
+
+            if (isFinished)
+            {
+                raceFinished();
+            }
         }
 
         public int newSpeed(int name)
@@ -110,12 +185,62 @@ namespace Pferderennen
 
             lastSpeed = end;
             
-            if(name == winner)
+            if(name == willwinner)
             {
                 end += plusPerRound;
             }
 
             return end;
+        }
+
+        public void raceFinished()
+        {
+            string win = "";
+
+            switch (winner)
+            {
+                case -1:
+                    win = "err";
+                    Logger.ErrorLog("Index out of Range Race.cs on Line 203");
+                    break;
+                case 0:
+                    win = "Ruedi";
+                    break;
+                case 1:
+                    win = "Fredi";
+                    break;
+                case 2:
+                    win = "Hans";
+                    break;
+                case 3:
+                    win = "Peter";
+                    break;
+                case 4:
+                    win = "Fridolin";
+                    break;
+                case 5:
+                    win = "Bertha";
+                    break;
+                default:
+                    win = "Err";
+                    Logger.ErrorLog("Index out of Range Race.cs on Line 224");
+                    break;
+            }
+
+            Logger.InfoLog("Race has finished with exit code 0");
+            Logger.InfoLog(win + " has won in " + Math.Round(timer.Elapsed.TotalSeconds, 2) + "Seconds");
+
+            MessageBox.Show(win + " hat das Rennen nach " + Math.Round(timer.Elapsed.TotalSeconds, 2) + " Sekunden gewonnen");
+
+            Thread t = new Thread(LeaderBoard);
+            t.Start();
+        }
+
+        private void LeaderBoard()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LeaderBoard());
         }
     }
 }
