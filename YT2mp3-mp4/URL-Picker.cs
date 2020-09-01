@@ -12,7 +12,7 @@ namespace YT2mp3_mp4
 
         public bool isValid;
         public string videoURL;
-
+        public bool isMP4;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             Uri uriResult;
@@ -24,6 +24,7 @@ namespace YT2mp3_mp4
         private void B_OK_Click(object sender, EventArgs e)
         {
             videoURL = tB_URL.Text;
+            isMP4 = cB_isMP4.Checked;
 
             if (isValid)
             {

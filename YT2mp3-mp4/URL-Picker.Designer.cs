@@ -31,6 +31,7 @@
             this.tB_URL = new System.Windows.Forms.TextBox();
             this.B_OK = new System.Windows.Forms.Button();
             this.cB_isValid = new System.Windows.Forms.CheckBox();
+            this.cB_isMP4 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tB_URL
@@ -62,11 +63,22 @@
             this.cB_isValid.Text = "URL is OK";
             this.cB_isValid.UseVisualStyleBackColor = true;
             // 
+            // cB_isMP4
+            // 
+            this.cB_isMP4.AutoSize = true;
+            this.cB_isMP4.Location = new System.Drawing.Point(531, 54);
+            this.cB_isMP4.Name = "cB_isMP4";
+            this.cB_isMP4.Size = new System.Drawing.Size(169, 24);
+            this.cB_isMP4.TabIndex = 3;
+            this.cB_isMP4.Text = "Als MP4 Speichern";
+            this.cB_isMP4.UseVisualStyleBackColor = true;
+            // 
             // URLPicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 91);
+            this.Controls.Add(this.cB_isMP4);
             this.Controls.Add(this.cB_isValid);
             this.Controls.Add(this.B_OK);
             this.Controls.Add(this.tB_URL);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.TextBox tB_URL;
         private System.Windows.Forms.Button B_OK;
         private System.Windows.Forms.CheckBox cB_isValid;
+        private System.Windows.Forms.CheckBox cB_isMP4;
     }
 }

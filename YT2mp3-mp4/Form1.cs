@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xabe.FFmpeg;
@@ -19,10 +17,12 @@ namespace YT2mp3_mp4
         }
 
         public string openfileName = "";
-        public string savefileName = "";
+        public string savefileNameMP3 = "";
+        public string savefileNameMP4 = "";
         public string URL = "";
         public bool urlOK = false;
         public bool isURL = false;
+        public bool isMP4;
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -37,14 +37,14 @@ namespace YT2mp3_mp4
 
         private void saveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            savefileName = saveFileDialog.FileName;
+            savefileNameMP3 = saveFileDialog.FileName;
         }
 
         [Obsolete]
         private async void B_Convert_Click(object sender, EventArgs e)
         {
 
-            if (savefileName != "" && openfileName != "")
+            if (savefileNameMP3 != "" && openfileName != "")
             {
                 await Task.Run(() => startConvertFile());
                 MessageBox.Show("Fertig!");
@@ -66,7 +66,7 @@ namespace YT2mp3_mp4
             var audioStream = mediaInfo.AudioStreams.First();
             var conversion = Conversion.New()
             .AddStream(audioStream)
-            .SetOutput(savefileName)
+            .SetOutput(savefileNameMP3)
             .SetOverwriteOutput(true)
             .UseMultiThread(true)
             .SetPreset(ConversionPreset.UltraFast);
@@ -85,31 +85,59 @@ namespace YT2mp3_mp4
 
             try
             {
-                string fileForDownload = savefileName.Replace("mp3", "mp4");
+                string fileForDownload = "";
+                if (isMP4)
+                {
+                    fileForDownload = savefileNameMP4;
+                }
+                else
+                {
+                    fileForDownload = savefileNameMP3.Replace("mp3", "mp4");
+                }
 
                 var youTube = YouTube.Default;
                 var video = youTube.GetVideo(URL);
                 await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_Vtitel.Text = video.Title; }))));
-                File.WriteAllBytes(fileForDownload, video.GetBytes());
+                byte[] videoRAW = video.GetBytes();
 
-                var mediaInfo = await MediaInfo.Get(fileForDownload);
-                var audioStream = mediaInfo.AudioStreams.First();
-                var conversion = Conversion.New()
-                .AddStream(audioStream)
-                .SetOutput(savefileName)
-                .SetOverwriteOutput(true)
-                .UseMultiThread(true)
-                .SetPreset(ConversionPreset.UltraFast);
-                conversion.OnProgress += async (sender, args) =>
+                using (FileStream stream = File.Open(fileForDownload, FileMode.OpenOrCreate))
                 {
-                    await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = args.Percent; }))));
-                };
+                    var bytesLeft = videoRAW.Length;
+                    var bytesWritten = 0;
+                    while (bytesLeft > 0)
+                    {
+                        var chunkSize = Math.Min(2048, bytesLeft);
+                        await stream.WriteAsync(videoRAW, bytesWritten, chunkSize);
+                        bytesWritten += chunkSize;
+                        bytesLeft -= chunkSize;
 
-                await conversion.Start();
+                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; }))));
+                    }
+                }
 
-                File.Delete(fileForDownload);
-                MessageBox.Show("Fertig!");
+                if (!isMP4)
+                {
+                    var mediaInfo = await MediaInfo.Get(fileForDownload);
+                    var audioStream = mediaInfo.AudioStreams.First();
+                    var conversion = Conversion.New()
+                    .AddStream(audioStream)
+                    .SetOutput(savefileNameMP3)
+                    .SetOverwriteOutput(true)
+                    .UseMultiThread(true)
+                    .SetPreset(ConversionPreset.UltraFast);
+                    conversion.OnProgress += async (sender, args) =>
+                    {
+                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = args.Percent; }))));
+                    };
+
+                    await conversion.Start();
+
+                    File.Delete(fileForDownload);
+                }
+
                 await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).L_Vtitel.Visible = false; }))));
+                MessageBox.Show("Fertig!");
+
             }
             catch(Exception e)
             {
@@ -139,11 +167,24 @@ namespace YT2mp3_mp4
 
                     urlOK = (Application.OpenForms["URLPicker"] as URLPicker).isValid;
                     URL = (Application.OpenForms["URLPicker"] as URLPicker).videoURL;
+                    isMP4 = (Application.OpenForms["URLPicker"] as URLPicker).isMP4;
 
                 }));
             }
 
-            saveFileDialog.ShowDialog();
+            if (isMP4)
+            {
+                saveFileDialogMP4.ShowDialog();
+            }
+            else
+            {
+                saveFileDialog.ShowDialog();
+            }
+        }
+
+        private void saveFileDialogMP4_FileOk(object sender, CancelEventArgs e)
+        {
+            savefileNameMP4 = saveFileDialogMP4.FileName;
         }
     }
 }

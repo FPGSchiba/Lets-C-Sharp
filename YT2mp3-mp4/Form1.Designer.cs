@@ -35,6 +35,7 @@
             this.B_Convert = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.L_Vtitel = new System.Windows.Forms.Label();
+            this.saveFileDialogMP4 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -98,6 +99,13 @@
             this.L_Vtitel.Text = "Name (bald) (:";
             this.L_Vtitel.Visible = false;
             // 
+            // saveFileDialogMP4
+            // 
+            this.saveFileDialogMP4.DefaultExt = "mp4";
+            this.saveFileDialogMP4.FileName = "*.mp4";
+            this.saveFileDialogMP4.Filter = "*.mp4|";
+            this.saveFileDialogMP4.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMP4_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -125,6 +133,7 @@
         private System.Windows.Forms.Button B_Convert;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label L_Vtitel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMP4;
     }
 }
 
