@@ -111,7 +111,15 @@ namespace YT2mp3_mp4
                         bytesWritten += chunkSize;
                         bytesLeft -= chunkSize;
 
-                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; }))));
+                        try
+                        {
+                            await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; } catch { } }))));
+                        }
+                        catch
+                        {
+
+                        }
+                       
                     }
                 }
 
