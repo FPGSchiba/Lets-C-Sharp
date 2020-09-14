@@ -28,15 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_CPU = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_GPU = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_MEM = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_DISK_Free = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_DISK_Usage = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cr_FILL = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_CPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_GPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_MEM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_DISK_Free)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_DISK_Usage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_FILL)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,7 +75,7 @@
             this.actionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2352, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(2430, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,36 +91,147 @@
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
             this.actionsToolStripMenuItem.Text = "Actions";
             // 
-            // chart1
+            // cr_CPU
             // 
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.Minimum = 0D;
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.cr_CPU.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(596, 239);
-            this.chart1.Name = "chart1";
+            this.cr_CPU.Legends.Add(legend1);
+            this.cr_CPU.Location = new System.Drawing.Point(57, 98);
+            this.cr_CPU.Name = "cr_CPU";
+            series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(707, 411);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
+            series1.Name = "CPU Percent";
+            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.cr_CPU.Series.Add(series1);
+            this.cr_CPU.Size = new System.Drawing.Size(707, 411);
+            this.cr_CPU.TabIndex = 2;
+            this.cr_CPU.Text = "v";
+            // 
+            // cr_GPU
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.cr_GPU.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.cr_GPU.Legends.Add(legend2);
+            this.cr_GPU.Location = new System.Drawing.Point(57, 664);
+            this.cr_GPU.Name = "cr_GPU";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "GPU Percent";
+            this.cr_GPU.Series.Add(series2);
+            this.cr_GPU.Size = new System.Drawing.Size(707, 411);
+            this.cr_GPU.TabIndex = 3;
+            this.cr_GPU.Text = "v";
+            // 
+            // cr_MEM
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.cr_MEM.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.cr_MEM.Legends.Add(legend3);
+            this.cr_MEM.Location = new System.Drawing.Point(851, 98);
+            this.cr_MEM.Name = "cr_MEM";
+            series3.BorderWidth = 3;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Memory Percent";
+            this.cr_MEM.Series.Add(series3);
+            this.cr_MEM.Size = new System.Drawing.Size(707, 411);
+            this.cr_MEM.TabIndex = 4;
+            this.cr_MEM.Text = "v";
+            // 
+            // cr_DISK_Free
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.cr_DISK_Free.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.cr_DISK_Free.Legends.Add(legend4);
+            this.cr_DISK_Free.Location = new System.Drawing.Point(851, 664);
+            this.cr_DISK_Free.Name = "cr_DISK_Free";
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Disk Space Free";
+            this.cr_DISK_Free.Series.Add(series4);
+            this.cr_DISK_Free.Size = new System.Drawing.Size(707, 411);
+            this.cr_DISK_Free.TabIndex = 5;
+            this.cr_DISK_Free.Text = "v";
+            // 
+            // cr_DISK_Usage
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.cr_DISK_Usage.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.cr_DISK_Usage.Legends.Add(legend5);
+            this.cr_DISK_Usage.Location = new System.Drawing.Point(1647, 98);
+            this.cr_DISK_Usage.Name = "cr_DISK_Usage";
+            series5.BorderWidth = 3;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "Disk Usage";
+            this.cr_DISK_Usage.Series.Add(series5);
+            this.cr_DISK_Usage.Size = new System.Drawing.Size(707, 411);
+            this.cr_DISK_Usage.TabIndex = 6;
+            this.cr_DISK_Usage.Text = "v";
+            // 
+            // cr_FILL
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.cr_FILL.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.cr_FILL.Legends.Add(legend6);
+            this.cr_FILL.Location = new System.Drawing.Point(1647, 664);
+            this.cr_FILL.Name = "cr_FILL";
+            series6.BorderWidth = 3;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Can be filled";
+            this.cr_FILL.Series.Add(series6);
+            this.cr_FILL.Size = new System.Drawing.Size(707, 411);
+            this.cr_FILL.TabIndex = 7;
+            this.cr_FILL.Text = "v";
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2352, 1180);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(2430, 1180);
+            this.Controls.Add(this.cr_FILL);
+            this.Controls.Add(this.cr_DISK_Usage);
+            this.Controls.Add(this.cr_DISK_Free);
+            this.Controls.Add(this.cr_MEM);
+            this.Controls.Add(this.cr_GPU);
+            this.Controls.Add(this.cr_CPU);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Dashboard";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_CPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_GPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_MEM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_DISK_Free)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_DISK_Usage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cr_FILL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,7 +242,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_CPU;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_GPU;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_MEM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_DISK_Free;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_DISK_Usage;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cr_FILL;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
