@@ -8,3 +8,13 @@ C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debu
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.CoreCompileInputs.cache
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.exe
 C:\Users\Jann Erhardt\Documents\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.pdb
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\MonitorIT.exe.config
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\MonitorIT.exe
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\MonitorIT.pdb
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csprojAssemblyReference.cache
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.Form1.resources
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.Properties.Resources.resources
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.GenerateResource.cache
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.CoreCompileInputs.cache
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.exe
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.pdb
