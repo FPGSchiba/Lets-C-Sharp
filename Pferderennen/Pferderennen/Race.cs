@@ -17,7 +17,7 @@ namespace Pferderennen
 
         #region GetForm1Var
 
-        public int plusPerRound = 20;
+        public int plusPerRound = 15;
 
         public int RuediEinsatz;
         public int FrediEinsatz;
@@ -149,7 +149,7 @@ namespace Pferderennen
                 timer.Stop();
                 pB_Bertha.Value = 10000;
                 timer1.Enabled = false;
-                winner = 4;
+                winner = 5;
                 isFinished = true;
             }
             

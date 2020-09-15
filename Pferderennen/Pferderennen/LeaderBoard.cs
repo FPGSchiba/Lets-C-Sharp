@@ -178,12 +178,12 @@ namespace Pferderennen
             PL_Fridolin.Text = FridolinPlace.ToString() + ". Platz";
             PL_Bertha.Text = BerthaPlace.ToString() + ". Platz";
 
-            ES_Ruedi.Text = RuediEinsatz.ToString() + "CHF Einsatz";
-            ES_Fredi.Text = FrediEinsatz.ToString() + "CHF Einsatz";
-            ES_Hans.Text = HansEinsatz.ToString() + "CHF Einsatz";
-            ES_Peter.Text = PeterEinsatz.ToString() + "CHF Einsatz";
-            ES_Fridolin.Text = FridolinEinsatz.ToString() + "CHF Einsatz";
-            ES_Bertha.Text = BerthaEinsatz.ToString() + "CHF Einsatz";
+            ES_Ruedi.Text = RuediEinsatz.ToString() + " CHF Einsatz";
+            ES_Fredi.Text = FrediEinsatz.ToString() + " CHF Einsatz";
+            ES_Hans.Text = HansEinsatz.ToString() + " CHF Einsatz";
+            ES_Peter.Text = PeterEinsatz.ToString() + " CHF Einsatz";
+            ES_Fridolin.Text = FridolinEinsatz.ToString() + " CHF Einsatz";
+            ES_Bertha.Text = BerthaEinsatz.ToString() + " CHF Einsatz";
 
             G_Ruedi.Text = RuediGewinn.ToString() + " CHF Gewinn pro Person";
             G_Fredi.Text = FrediGewinn.ToString() + " CHF Gewinn pro Person";
