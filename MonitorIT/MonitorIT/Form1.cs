@@ -23,6 +23,7 @@ namespace MonitorIT
         public IPEndPoint remoteEP = new IPEndPoint(IPAddress.Parse(ip), 5050);
         public Socket socket = new Socket(IPAddress.Parse("127.0.0.1").AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         public string VerisonString = "Version: 1.0";
+        public int MaxDiskSpace;
 
         private static bool verified = false;
 
@@ -84,6 +85,7 @@ namespace MonitorIT
         private void Form1_Shown(object sender, EventArgs e)
         {
             StartClient();
+            MaxDiskSpace = getMaxDiskSpace();
             fill_CPU();
         }
 
@@ -99,7 +101,7 @@ namespace MonitorIT
                 byte[] msg = Encoding.ASCII.GetBytes("GetCPU");
                 byte[] rec = new byte[1024];
 
-                int byteSent = socket.Send(msg);
+                socket.Send(msg);
                 int byteRec = socket.Receive(rec);
 
                 cr_CPU.Series["CPU Percent"].Points.AddXY(DateTime.Now.ToString("h:mm:ss"), Encoding.ASCII.GetString(rec, 0, byteRec));
@@ -108,7 +110,70 @@ namespace MonitorIT
                     cr_CPU.Series["CPU Percent"].Points.RemoveAt(0);
                     cr_CPU.ResetAutoValues();
                 }
+
+                msg = Encoding.ASCII.GetBytes("GetGPU");
+                socket.Send(msg);
+                byteRec = socket.Receive(rec);
+
+                cr_GPU.Series["GPU Percent"].Points.AddXY(DateTime.Now.ToString("h:mm:ss"), Encoding.ASCII.GetString(rec, 0, byteRec));
+                if(cr_GPU.Series["GPU Percent"].Points.Count >= 10)
+                {
+                    cr_GPU.Series["GPU Percent"].Points.RemoveAt(0);
+                    cr_GPU.ResetAutoValues();
+                }
+
+                msg = Encoding.ASCII.GetBytes("GetMEM");
+                socket.Send(msg);
+                byteRec = socket.Receive(rec);
+
+                cr_MEM.Series["Memory Percent"].Points.AddXY(DateTime.Now.ToString("h:mm:ss"), Encoding.ASCII.GetString(rec, 0, byteRec));
+                if(cr_MEM.Series["Memory Percent"].Points.Count >= 10)
+                {
+                    cr_MEM.Series["Memory Percent"].Points.RemoveAt(0);
+                    cr_MEM.ResetAutoValues();
+                }
+
+                msg = Encoding.ASCII.GetBytes("GetDPC");
+                socket.Send(msg);
+                byteRec = socket.Receive(rec);
+
+                cr_DISK_Usage.Series[0].Points.AddXY(DateTime.Now.ToString("h:mm:ss"), Encoding.ASCII.GetString(rec, 0, byteRec));
+                if(cr_DISK_Usage.Series[0].Points.Count >= 10)
+                {
+                    cr_DISK_Usage.Series[0].Points.RemoveAt(0);
+                    cr_DISK_Usage.ResetAutoValues();
+                }
+
+                cr_DISK_Free.ChartAreas[0].AxisY.Maximum = MaxDiskSpace;
+                msg = Encoding.ASCII.GetBytes("GetDFR");
+                socket.Send(msg);
+                byteRec = socket.Receive(rec);
+
+                cr_DISK_Free.Series[0].Points.AddXY(DateTime.Now.ToString("h:mm:ss"), Encoding.ASCII.GetString(rec, 0, byteRec));
+                if(cr_DISK_Free.Series[0].Points.Count >= 10)
+                {
+                    cr_DISK_Free.Series[0].Points.RemoveAt(0);
+                    cr_DISK_Free.ResetAutoValues();
+                }
             }
+        }
+
+        public int getMaxDiskSpace()
+        {
+            int ret = 0;
+
+            if (verified)
+            {
+
+                byte[] msg = Encoding.ASCII.GetBytes("GetDFR");
+                byte[] rec = new byte[1024];
+                socket.Send(msg);
+
+                int byteRec = socket.Receive(rec);
+                ret = Convert.ToInt32(Encoding.ASCII.GetString(rec, 0, byteRec)) + 50;
+            }
+
+            return ret;
         }
     }
 }

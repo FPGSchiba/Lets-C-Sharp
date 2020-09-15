@@ -68,7 +68,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashboardToolStripMenuItem,
@@ -103,7 +102,7 @@
             this.cr_CPU.Name = "cr_CPU";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "CPU Percent";
             series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
@@ -114,6 +113,8 @@
             // 
             // cr_GPU
             // 
+            chartArea2.AxisY.Maximum = 100D;
+            chartArea2.AxisY.Minimum = 0D;
             chartArea2.Name = "ChartArea1";
             this.cr_GPU.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -122,7 +123,7 @@
             this.cr_GPU.Name = "cr_GPU";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend1";
             series2.Name = "GPU Percent";
             this.cr_GPU.Series.Add(series2);
@@ -132,6 +133,8 @@
             // 
             // cr_MEM
             // 
+            chartArea3.AxisY.Maximum = 100D;
+            chartArea3.AxisY.Minimum = 0D;
             chartArea3.Name = "ChartArea1";
             this.cr_MEM.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -140,7 +143,7 @@
             this.cr_MEM.Name = "cr_MEM";
             series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";
             series3.Name = "Memory Percent";
             this.cr_MEM.Series.Add(series3);
@@ -150,6 +153,8 @@
             // 
             // cr_DISK_Free
             // 
+            chartArea4.AxisY.Maximum = 100D;
+            chartArea4.AxisY.Minimum = 0D;
             chartArea4.Name = "ChartArea1";
             this.cr_DISK_Free.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
@@ -158,7 +163,7 @@
             this.cr_DISK_Free.Name = "cr_DISK_Free";
             series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series4.Legend = "Legend1";
             series4.Name = "Disk Space Free";
             this.cr_DISK_Free.Series.Add(series4);
@@ -176,7 +181,7 @@
             this.cr_DISK_Usage.Name = "cr_DISK_Usage";
             series5.BorderWidth = 3;
             series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series5.Legend = "Legend1";
             series5.Name = "Disk Usage";
             this.cr_DISK_Usage.Series.Add(series5);
@@ -194,7 +199,7 @@
             this.cr_FILL.Name = "cr_FILL";
             series6.BorderWidth = 3;
             series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series6.Legend = "Legend1";
             series6.Name = "Can be filled";
             this.cr_FILL.Series.Add(series6);
@@ -205,7 +210,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 1000;
+            this.timer.Interval = 30000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Form1
