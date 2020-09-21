@@ -1,0 +1,10 @@
+D:\GitHub\Lets-C-Sharp\AktienBank\bin\Debug\AktienBank.exe.config
+D:\GitHub\Lets-C-Sharp\AktienBank\bin\Debug\AktienBank.exe
+D:\GitHub\Lets-C-Sharp\AktienBank\bin\Debug\AktienBank.pdb
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.csprojAssemblyReference.cache
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.Form1.resources
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.Properties.Resources.resources
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.csproj.GenerateResource.cache
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.csproj.CoreCompileInputs.cache
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.exe
+D:\GitHub\Lets-C-Sharp\AktienBank\obj\Debug\AktienBank.pdb
