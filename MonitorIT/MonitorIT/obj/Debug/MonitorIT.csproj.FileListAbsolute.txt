@@ -18,3 +18,5 @@ D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.GenerateRe
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.CoreCompileInputs.cache
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.exe
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.pdb
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.StartMenu.resources
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.MainMenu.resources
