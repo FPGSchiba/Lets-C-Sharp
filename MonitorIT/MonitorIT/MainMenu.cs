@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -25,7 +22,7 @@ namespace MonitorIT
         public static string username;
         public static string password;
         public IPEndPoint remoteEP;
-        public Socket socket = new Socket(IPAddress.Parse("127.0.0.1").AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+        public static Socket socket;
         public string VerisonString = "Version: 1.1";
         public static bool verified;
         public static string remoteName;
@@ -38,100 +35,134 @@ namespace MonitorIT
             username = StartMenu.getUser();
             password = StartMenu.getPW();
             remoteEP = new IPEndPoint(IPAddress.Parse(ip), 5050);
+            socket = new Socket(remoteEP.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             gotLogin = true;
-            byte[] bytes = new byte[1024];
+            verified = false;
 
-            try
+            if (!Program.sockets.Contains(remoteEP))
             {
-                // Connect the socket to the remote endpoint. Catch any errors.    
+                Program.sockets.Add(remoteEP);
+
+                byte[] bytes = new byte[1024];
+
                 try
                 {
-                    // Connect to Remote EndPoint  
-                    socket.Connect(remoteEP);
-
-                    // Receive the response from the remote device.    
-                    int bytesRec = socket.Receive(bytes);
-                    if (Encoding.ASCII.GetString(bytes, 0, bytesRec) == VerisonString)
+                    // Connect the socket to the remote endpoint. Catch any errors.    
+                    try
                     {
-                        //send the VersionString for security
-                        byte[] msg = Encoding.ASCII.GetBytes(VerisonString);
-                        int bytesSent = socket.Send(msg);
-                        
-                        //Get remote Server Name
-                        bytesRec = socket.Receive(bytes);
-                        remoteName = Encoding.UTF8.GetString(bytes, 0, bytesRec);
-                        this.Text = "MainMenu - " + remoteName;
 
-                        while (!verified)
+                        // Connect to Remote EndPoint  
+                        socket.Connect(remoteEP);
+
+                        // Receive the response from the remote device.    
+                        int bytesRec = socket.Receive(bytes);
+                        if (Encoding.ASCII.GetString(bytes, 0, bytesRec) == VerisonString)
                         {
-                            //send Username
-                            msg = Encoding.UTF8.GetBytes(username);
-                            bytesSent = socket.Send(msg);
+                            //send the VersionString for security
+                            byte[] msg = Encoding.ASCII.GetBytes(VerisonString);
+                            int bytesSent = socket.Send(msg);
 
-                            //send Hashed Password
-                            msg = Encoding.UTF8.GetBytes(CreateMD5Hash(password));
-                            bytesSent = socket.Send(msg);
-
-                            //Get the reply from  the server
                             bytesRec = socket.Receive(bytes);
-                            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "connected")
+
+                            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "sending Name")
                             {
-                                verified = true;
-                                getOverview();
-                            }
-                            else if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "wrong")
-                            {
-                                gotLogin = false;
-                                MessageBox.Show("Wrong Username or Password");
-                                Thread thread = new Thread(StartLogin);
-                                thread.Start();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Too many wrong logins hanging off connection...");
-                                socket.Shutdown(SocketShutdown.Both);
-                                socket.Close();
-                            }
-                            while (!gotLogin)
-                            {
-                                await Task.Delay(25);
+                                //Get remote Server Name
+                                bytesRec = socket.Receive(bytes);
+                                remoteName = Encoding.UTF8.GetString(bytes, 0, bytesRec);
+
+                                this.Text = "MainMenu - " + remoteName;
+
+                                while (!verified)
+                                {
+                                    bytesRec = socket.Receive(bytes);
+                                    if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "need user")
+                                    {
+                                        //send Username
+                                        msg = Encoding.UTF8.GetBytes(username);
+                                        bytesSent = socket.Send(msg);
+
+                                        bytesRec = socket.Receive(bytes);
+                                        if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "need pw")
+                                        {
+                                            //send Hashed Password
+                                            msg = Encoding.UTF8.GetBytes(CreateMD5Hash(password));
+                                            bytesSent = socket.Send(msg);
+
+                                            //Get the reply from  the server
+                                            bytesRec = socket.Receive(bytes);
+                                            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "connected")
+                                            {
+                                                //Verified the Login
+                                                verified = true;
+                                                gotLogin = true;
+                                                getOverview();
+                                            }
+                                            else if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "wrong")
+                                            {
+                                                //Login Information wrong
+                                                gotLogin = false;
+                                                MessageBox.Show("Wrong Username or Password");
+                                                Thread thread = new Thread(StartLogin);
+                                                thread.Start();
+                                            }
+                                            else
+                                            {
+                                                //Somthing unexpected or too many wrong Logins
+                                                MessageBox.Show("Too many wrong logins hanging off connection...");
+                                                socket.Shutdown(SocketShutdown.Both);
+                                                socket.Close();
+                                            }
+                                            //Wait for other Form to finish
+                                            while (!gotLogin)
+                                            {
+                                                await Task.Delay(25);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        // Release the socket.    
-                        socket.Shutdown(SocketShutdown.Both);
-                        socket.Close();
+                        else
+                        {
+                            // Release the socket.    
+                            socket.Shutdown(SocketShutdown.Both);
+                            socket.Close();
 
-                        MessageBox.Show("A other Version is on the Server, then on the Client. Please contact you Administrator.");
+                            //Error Message
+                            MessageBox.Show("A other Version is on the Server, then on the Client. Please contact you Administrator.");
+                            ActiveForm.Close();
+                        }
+                    }
+                    catch (ArgumentNullException ane)
+                    {
+                        MessageBox.Show("ArgumentNullException : " + ane.Message);
                         ActiveForm.Close();
                     }
-                }
-                catch (ArgumentNullException ane)
-                {
-                    MessageBox.Show("ArgumentNullException : " + ane.Message);
-                    ActiveForm.Close();
-                }
-                catch (SocketException se)
-                {
-                    MessageBox.Show("SocketException : " + se.Message);
-                    ActiveForm.Close();
+                    catch (SocketException se)
+                    {
+                        MessageBox.Show("SocketException : " + se.Message);
+                        ActiveForm.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unexpected exception : " + ex.Message);
+                        ActiveForm.Close();
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unexpected exception : " + ex.Message);
-                    ActiveForm.Close();
+                    MessageBox.Show(ex.Message);
+                    if (ActiveForm.IsAccessible)
+                    {
+                        ActiveForm.Close();
+                    }
                 }
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                if (ActiveForm.IsAccessible)
-                {
-                    ActiveForm.Close();
-                }
+                MessageBox.Show("Es besteht bereits einen Verbindung zu diesem Agent.");
+                this.Close();
             }
         }
 
@@ -160,7 +191,7 @@ namespace MonitorIT
 
         public void getOverview()
         {
-            OV_CUser.Text = username;
+            OV_CUser.Text = "Current User: " + username;
 
             byte[] bytes = new byte[1024];
 
@@ -168,17 +199,85 @@ namespace MonitorIT
             int bytesSent = socket.Send(msg);
 
             int bytesRec = socket.Receive(bytes);
-            string overviewstring = Encoding.UTF8.GetString(bytes, 0, bytesRec);
-            string[] overview = overviewstring.Split('|');
-            try
+            string answer = Encoding.UTF8.GetString(bytes, 0, bytesRec);
+            if(answer == "sending Overview")
             {
-                OV_Crit.Text = "Criticals: " + overview[0];
-                OV_CUser.Text = "Users: " + overview[1];
-                OV_Stat.Text = "Status: " + overview[2];
+                bytesRec = socket.Receive(bytes);
+                string overviewstring = Encoding.UTF8.GetString(bytes, 0, bytesRec);
+                string[] overview = overviewstring.Split('|');
+                try
+                {
+                    OV_Crit.Text = "Criticals: " + overview[0];
+                    OV_User.Text = "Users: " + overview[1];
+                    OV_Stat.Text = "Status: " + overview[2];
+                }
+                catch
+                {
+                    MessageBox.Show("Overview could not load correctly");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Overview could not load correctly");
+                MessageBox.Show("No Overview recieved from Server");
+            }
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (verified)
+            {
+                byte[] bytes = new byte[1024];
+
+                byte[] msg = Encoding.ASCII.GetBytes("disconnect");
+                int bytesSent = socket.Send(msg);
+
+                socket.Shutdown(SocketShutdown.Both);
+                socket.Close();
+            }
+        }
+
+        private void open_Dashboard_Click(object sender, EventArgs e)
+        {
+            byte[] bytes = new byte[1024];
+            byte[] msg = Encoding.UTF8.GetBytes("see-dashboard");
+            int bytesSent = socket.Send(msg);
+
+            Thread thread = new Thread(startDashboard);
+
+            int bytesRec = socket.Receive(bytes);
+
+            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "starting Dashboard")
+            {
+                thread.Start();
+            }
+        }
+
+        public void startDashboard()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+        }
+
+        private void B_Save_Click(object sender, EventArgs e)
+        {
+            string[] contains = new string[30];
+
+            if (File.Exists(StartMenu.connectedServerConfig))
+            {
+                contains = File.ReadAllLines(StartMenu.connectedServerConfig);
+            }
+
+            using(var writer = File.AppendText(StartMenu.connectedServerConfig))
+            {
+                if(!contains.Contains(ip + "," + remoteName))
+                {
+                    writer.WriteLine(ip + "," + remoteName);
+                }
+                else
+                {
+                    MessageBox.Show("Connection already saved.");
+                }
             }
         }
     }

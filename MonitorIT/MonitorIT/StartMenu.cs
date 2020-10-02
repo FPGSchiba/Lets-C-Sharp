@@ -21,7 +21,7 @@ namespace MonitorIT
             InitializeComponent();
         }
 
-        public static string connectedServerConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\MIT\Conn_Server.txt";
+        public static string connectedServerConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\MIT\Conn_Server.csv";
         public bool saved_login = false;
         static string ip;
         static string username;
@@ -41,26 +41,26 @@ namespace MonitorIT
             if (File.Exists(connectedServerConfig))
             {
                 saved_login = true;
-                using (var reader = new StreamReader(@"C:\test.csv"))
+                using (var reader = new StreamReader(connectedServerConfig))
                 {
-                    List<string> listIP = new List<string>();
-                    List<string> listName = new List<string>();
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(',');
 
-                        listIP.Add(values[0]);
-                        listName.Add(values[1]);
-                    }
+                        string[] listIP = new string[2];
 
-                    foreach(string i in listIP)
-                    {
-                        listView1.Columns.Add("IP-Adress", i);
-                    }
-                    foreach(string i in listName)
-                    {
-                        listView1.Columns.Add("Server-Name", i);
+                        listIP.Append(values[0]);
+                        listIP.Append(values[1]);
+
+                        ListViewItem itm = new ListViewItem(listIP);
+
+                        foreach(string i in listIP)
+                        {
+                            MessageBox.Show(i);
+                        }
+
+                        listView1.Items.Add(itm);
                     }
                 }
             }

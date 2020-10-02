@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 
 namespace MonitorIT
@@ -14,6 +13,7 @@ namespace MonitorIT
         /// 
 
         public static string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\MIT\";
+        public static List<IPEndPoint> sockets = new List<IPEndPoint>();
 
         [STAThread]
         static void Main()

@@ -33,7 +33,11 @@
             this.OV_Stat = new System.Windows.Forms.Label();
             this.OV_User = new System.Windows.Forms.Label();
             this.OV_Crit = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.open_Dashboard = new System.Windows.Forms.Button();
+            this.B_Save = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -85,17 +89,51 @@
             this.OV_Crit.TabIndex = 1;
             this.OV_Crit.Text = "Criticals: ";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.open_Dashboard);
+            this.groupBox2.Location = new System.Drawing.Point(261, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(189, 136);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Open";
+            // 
+            // open_Dashboard
+            // 
+            this.open_Dashboard.Location = new System.Drawing.Point(6, 19);
+            this.open_Dashboard.Name = "open_Dashboard";
+            this.open_Dashboard.Size = new System.Drawing.Size(177, 23);
+            this.open_Dashboard.TabIndex = 0;
+            this.open_Dashboard.Text = "Dashboard";
+            this.open_Dashboard.UseVisualStyleBackColor = true;
+            this.open_Dashboard.Click += new System.EventHandler(this.open_Dashboard_Click);
+            // 
+            // B_Save
+            // 
+            this.B_Save.Location = new System.Drawing.Point(822, 469);
+            this.B_Save.Name = "B_Save";
+            this.B_Save.Size = new System.Drawing.Size(135, 23);
+            this.B_Save.TabIndex = 6;
+            this.B_Save.Text = "Save this Connection";
+            this.B_Save.UseVisualStyleBackColor = true;
+            this.B_Save.Click += new System.EventHandler(this.B_Save_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 589);
+            this.ClientSize = new System.Drawing.Size(969, 504);
+            this.Controls.Add(this.B_Save);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainMenu";
             this.Text = "MainMenu ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -107,5 +145,8 @@
         private System.Windows.Forms.Label OV_Crit;
         private System.Windows.Forms.Label OV_Stat;
         private System.Windows.Forms.Label OV_CUser;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button open_Dashboard;
+        private System.Windows.Forms.Button B_Save;
     }
 }
