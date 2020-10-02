@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,13 +29,16 @@ namespace MonitorIT
         public string VerisonString = "Version: 1.1";
         public static bool verified;
         public static string remoteName;
+        public static bool gotLogin;
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        [Obsolete]
+        private async void MainMenu_Load(object sender, EventArgs e)
         {
             ip = StartMenu.getIP();
             username = StartMenu.getUser();
             password = StartMenu.getPW();
-            remoteEP = new IPEndPoint(IPAddress.Parse(ip), 5050); 
+            remoteEP = new IPEndPoint(IPAddress.Parse(ip), 5050);
+            gotLogin = true;
             byte[] bytes = new byte[1024];
 
             try
@@ -58,32 +62,41 @@ namespace MonitorIT
                         remoteName = Encoding.UTF8.GetString(bytes, 0, bytesRec);
                         this.Text = "MainMenu - " + remoteName;
 
-                        //send Username
-                        msg = Encoding.UTF8.GetBytes(username);
-                        bytesSent = socket.Send(msg);
-
-                        //send Hashed Password
-                        msg = Encoding.UTF8.GetBytes(CreateMD5Hash(password));
-                        bytesSent = socket.Send(msg);
-
-                        //Get the reply from  the server
-                        bytesRec = socket.Receive(bytes);
-                        if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "connected")
+                        while (!verified)
                         {
-                            verified = true;
-                        }
-                        else if(Encoding.UTF8.GetString(bytes, 0, bytesRec) == "wrong")
-                        {
-                            //Ask for other username and password
-                        }
-                        else
-                        {
-                            MessageBox.Show("Too many wrong logins hanging off connection...");
-                            socket.Shutdown(SocketShutdown.Both);
-                            socket.Close();
-                        }
+                            //send Username
+                            msg = Encoding.UTF8.GetBytes(username);
+                            bytesSent = socket.Send(msg);
 
-                        verified = true;
+                            //send Hashed Password
+                            msg = Encoding.UTF8.GetBytes(CreateMD5Hash(password));
+                            bytesSent = socket.Send(msg);
+
+                            //Get the reply from  the server
+                            bytesRec = socket.Receive(bytes);
+                            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "connected")
+                            {
+                                verified = true;
+                                getOverview();
+                            }
+                            else if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "wrong")
+                            {
+                                gotLogin = false;
+                                MessageBox.Show("Wrong Username or Password");
+                                Thread thread = new Thread(StartLogin);
+                                thread.Start();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Too many wrong logins hanging off connection...");
+                                socket.Shutdown(SocketShutdown.Both);
+                                socket.Close();
+                            }
+                            while (!gotLogin)
+                            {
+                                await Task.Delay(25);
+                            }
+                        }
                     }
                     else
                     {
@@ -122,6 +135,13 @@ namespace MonitorIT
             }
         }
 
+        public static void StartLogin()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Login());
+        }
+
         public static string CreateMD5Hash(string input)
         {
             // Step 1, calculate MD5 hash from input
@@ -136,6 +156,30 @@ namespace MonitorIT
                 sb.Append(hashBytes[i].ToString("x2"));
             }
             return sb.ToString();
+        }
+
+        public void getOverview()
+        {
+            OV_CUser.Text = username;
+
+            byte[] bytes = new byte[1024];
+
+            byte[] msg = Encoding.ASCII.GetBytes("get-overview");
+            int bytesSent = socket.Send(msg);
+
+            int bytesRec = socket.Receive(bytes);
+            string overviewstring = Encoding.UTF8.GetString(bytes, 0, bytesRec);
+            string[] overview = overviewstring.Split('|');
+            try
+            {
+                OV_Crit.Text = "Criticals: " + overview[0];
+                OV_CUser.Text = "Users: " + overview[1];
+                OV_Stat.Text = "Status: " + overview[2];
+            }
+            catch
+            {
+                MessageBox.Show("Overview could not load correctly");
+            }
         }
     }
 }
