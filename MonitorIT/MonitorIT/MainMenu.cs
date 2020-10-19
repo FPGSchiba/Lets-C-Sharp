@@ -105,10 +105,17 @@ namespace MonitorIT
                                                 Thread thread = new Thread(StartLogin);
                                                 thread.Start();
                                             }
-                                            else
+                                            else if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "abort")
                                             {
                                                 //Somthing unexpected or too many wrong Logins
                                                 MessageBox.Show("Too many wrong logins hanging off connection...");
+                                                socket.Shutdown(SocketShutdown.Both);
+                                                socket.Close();
+                                                ActiveForm.Close();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Somthing else went wrong Hanging off...");
                                                 socket.Shutdown(SocketShutdown.Both);
                                                 socket.Close();
                                             }
@@ -130,38 +137,45 @@ namespace MonitorIT
 
                             //Error Message
                             MessageBox.Show("A other Version is on the Server, then on the Client. Please contact you Administrator.");
-                            ActiveForm.Close();
+                            this.Close();
                         }
                     }
                     catch (ArgumentNullException ane)
                     {
                         MessageBox.Show("ArgumentNullException : " + ane.Message);
-                        ActiveForm.Close();
+                        this.Close();
                     }
                     catch (SocketException se)
                     {
-                        MessageBox.Show("SocketException : " + se.Message);
-                        ActiveForm.Close();
+                        MessageBox.Show("The Server did not Respond to the request.");
+                        this.Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Unexpected exception : " + ex.Message);
-                        ActiveForm.Close();
+                        this.Close();
                     }
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    if (ActiveForm.IsAccessible)
-                    {
-                        ActiveForm.Close();
-                    }
+                    this.Close();
                 }
             }
             else
             {
                 MessageBox.Show("Es besteht bereits einen Verbindung zu diesem Agent.");
+                this.Close();
+            }
+
+            Reset();
+        }
+
+        public void Reset()
+        {
+            if (!verified)
+            {
                 this.Close();
             }
         }
