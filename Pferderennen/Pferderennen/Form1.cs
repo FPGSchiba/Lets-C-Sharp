@@ -68,21 +68,23 @@ namespace Pferderennen
                     case -1:
                         break;
                     case 0:
-                        RuediSpeed += 50;
                         break;
                     case 1:
-                        FrediSpeed += 50;
+                        RuediSpeed += 50;
                         break;
                     case 2:
-                        HansSpeed += 50;
+                        FrediSpeed += 50;
                         break;
                     case 3:
-                        PeterSpeed += 50;
+                        HansSpeed += 50;
                         break;
                     case 4:
-                        FridolinSpeed += 50;
+                        PeterSpeed += 50;
                         break;
                     case 5:
+                        FridolinSpeed += 50;
+                        break;
+                    case 6:
                         BerthaSpeed += 50;
                         break;
                     default:
@@ -110,6 +112,8 @@ namespace Pferderennen
             tB_Peter.Text = "";
             tB_Fridolin.Text = "";
             tB_Bertha.Text = "";
+
+            Win_Select.SelectedItem = "Spezial";
         }
 
         public void racePrep()

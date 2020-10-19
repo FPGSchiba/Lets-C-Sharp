@@ -51,6 +51,8 @@ namespace Pferderennen
 
         int winner;
 
+        double time;
+
         void getVar()
         {
             if (Application.OpenForms["Race"] != null)
@@ -72,6 +74,8 @@ namespace Pferderennen
                     BerthaProgress = (Application.OpenForms["Race"] as Race).pB_Bertha.Value;
 
                     winner = (Application.OpenForms["Race"] as Race).winner;
+
+                    time = Math.Round((Application.OpenForms["Race"] as Race).timer.Elapsed.TotalSeconds, 2);
                 }));
             }
 
@@ -127,13 +131,54 @@ namespace Pferderennen
                     Logger.ErrorLog("No real winner LeaderBoard.cs on Line 111");
                     break;
             }
-
-            places.Add(RuediProgress, 0);
-            places.Add(FrediProgress, 1);
-            places.Add(HansProgress, 2);
-            places.Add(PeterProgress, 3);
-            places.Add(FridolinProgress, 4);
-            places.Add(BerthaProgress, 5);
+            try
+            {
+                places.Add(RuediProgress, 0);
+            }
+            catch
+            {
+                Logger.ErrorLog("Ruedi-Key was duplicated on LeaderBoard on Line 136");
+            }
+            try
+            {
+                places.Add(FrediProgress, 1);
+            }
+            catch
+            {
+                Logger.ErrorLog("Fredi-Key was duplicated on LeaderBoard on Line 144");
+            }
+            try
+            {
+                places.Add(HansProgress, 2);
+            }
+            catch
+            {
+                Logger.ErrorLog("Hans-Key was duplicated on LeaderBoard on Line 152");
+            }
+            try
+            {
+                places.Add(PeterProgress, 3);
+            }
+            catch
+            {
+                Logger.ErrorLog("Peter-Key was duplicated on LeaderBoard on Line 160");
+            }
+            try
+            {
+                places.Add(FridolinProgress, 4);
+            }
+            catch
+            {
+                Logger.ErrorLog("Fridolin-Key was duplicated on LeaderBoard on Line 168");
+            }
+            try
+            {
+                places.Add(BerthaProgress, 5);
+            }
+            catch
+            {
+                Logger.ErrorLog("Bertha-Key was duplicated on LeaderBoard on Line 176");
+            }
 
             
             foreach(var i in places)
@@ -191,9 +236,21 @@ namespace Pferderennen
             G_Peter.Text = PeterGewinn.ToString() + " CHF Gewinn pro Person";
             G_Fridolin.Text = FridolinGewinn.ToString() + " CHF Gewinn pro Person";
             G_Bertha.Text = BerthaGewinn.ToString() + " CHF Gewinn pro Person";
+
+            L_time.Text = "Zeit des Rennens: " + time + "s";
         }
 
         private void B_finished_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["LeaderBoard"].Close();
+        }
+
+        private void tB_Winners_TextChanged(object sender, EventArgs e)
+        {
+            outPut();
+        }
+
+        private void LeaderBoard_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Application.OpenForms["Form1"] != null)
             {
@@ -212,13 +269,6 @@ namespace Pferderennen
 
                 }));
             }
-
-            Application.OpenForms["LeaderBoard"].Close();
-        }
-
-        private void tB_Winners_TextChanged(object sender, EventArgs e)
-        {
-            outPut();
         }
     }
 }

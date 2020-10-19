@@ -49,9 +49,6 @@ namespace Pferderennen
                     BerthaEinsatz = (Application.OpenForms["Form1"] as Form1).BerthaEinsatz;
 
                     willwinner = (Application.OpenForms["Form1"] as Form1).winner;
-
-                    timer.Start();
-
                 }));
             }
         }
@@ -203,22 +200,22 @@ namespace Pferderennen
                     win = "err";
                     Logger.ErrorLog("Index out of Range Race.cs on Line 203");
                     break;
-                case 0:
+                case 1:
                     win = "Ruedi";
                     break;
-                case 1:
+                case 2:
                     win = "Fredi";
                     break;
-                case 2:
+                case 3:
                     win = "Hans";
                     break;
-                case 3:
+                case 4:
                     win = "Peter";
                     break;
-                case 4:
+                case 5:
                     win = "Fridolin";
                     break;
-                case 5:
+                case 6:
                     win = "Bertha";
                     break;
                 default:
@@ -230,8 +227,6 @@ namespace Pferderennen
             Logger.InfoLog("Race has finished with exit code 0");
             Logger.InfoLog(win + " has won in " + Math.Round(timer.Elapsed.TotalSeconds, 2) + "Seconds");
 
-            MessageBox.Show(win + " hat das Rennen nach " + Math.Round(timer.Elapsed.TotalSeconds, 2) + " Sekunden gewonnen");
-
             Thread t = new Thread(LeaderBoard);
             t.Start();
         }
@@ -241,6 +236,13 @@ namespace Pferderennen
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LeaderBoard());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+
+            timer.Start();
         }
     }
 }
