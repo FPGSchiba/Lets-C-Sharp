@@ -24,6 +24,7 @@ namespace MonitorIT
         public static string connectedServerConfig = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\MIT\Conn_Server.csv";
         public bool saved_login = false;
         static string ip;
+        static string remoteName;
         static string username;
         static string password;
 
@@ -34,33 +35,19 @@ namespace MonitorIT
                 Directory.CreateDirectory(Program.AppDataPath);
             }
 
-            listView1.Columns.Insert(0, "IP-Adress");
-            listView1.Columns.Insert(1, "Server-Name");
-
             // Lade die IPs und Server namen und evt saved user + pw in die liste
             if (File.Exists(connectedServerConfig))
             {
                 saved_login = true;
                 using (var reader = new StreamReader(connectedServerConfig))
                 {
+
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(',');
 
-                        string[] listIP = new string[2];
-
-                        listIP.Append(values[0]);
-                        listIP.Append(values[1]);
-
-                        ListViewItem itm = new ListViewItem(listIP);
-
-                        foreach(string i in listIP)
-                        {
-                            MessageBox.Show(i);
-                        }
-
-                        listView1.Items.Add(itm);
+                        listView1.Items.Add(new ListViewItem(values));
                     }
                 }
             }
@@ -70,7 +57,20 @@ namespace MonitorIT
         {
             if (saved_login)
             {
-
+                username = tB_SeleUser.Text;
+                password = tB_SelePW.Text;
+                try
+                {
+                    IPAddress.Parse(ip);
+                    Thread MainMenu = new Thread(startMainMenu);
+                    MainMenu.Start();
+                    tB_SeleUser.Text = "";
+                    tB_SelePW.Text = "";
+                }
+                catch
+                {
+                    MessageBox.Show("Error reading IP-Adress");
+                }
             }
             else
             {
@@ -119,6 +119,24 @@ namespace MonitorIT
         public static string getPW()
         {
             return password;
+        }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if(e.Item.Text != remoteName)
+            {
+                foreach(ListViewItem.ListViewSubItem item in e.Item.SubItems)
+                {
+                    if(e.Item.Text == item.Text)
+                    {
+                        remoteName = item.Text;
+                    }
+                    else
+                    {
+                        ip = item.Text;
+                    }
+                }
+            }
         }
     }
 }

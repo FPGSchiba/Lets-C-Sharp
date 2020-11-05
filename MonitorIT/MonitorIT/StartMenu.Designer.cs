@@ -30,33 +30,44 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.gB_Login = new System.Windows.Forms.GroupBox();
+            this.B_SeleLogin = new System.Windows.Forms.Button();
             this.tB_SelePW = new System.Windows.Forms.TextBox();
             this.tB_SeleUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.B_DiffLogin = new System.Windows.Forms.Button();
+            this.tB_ServerIP = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tB_DiffPW = new System.Windows.Forms.TextBox();
             this.tB_DiffUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tB_ServerIP = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.B_SeleLogin = new System.Windows.Forms.Button();
-            this.B_DiffLogin = new System.Windows.Forms.Button();
             this.gB_Login.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.listView1.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.listView1.AllowColumnReorder = true;
+            this.listView1.AutoArrange = false;
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(344, 426);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 0;
+            this.listView1.TabStop = false;
+            this.listView1.TileSize = new System.Drawing.Size(50, 50);
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             // 
             // gB_Login
             // 
@@ -71,6 +82,16 @@
             this.gB_Login.TabIndex = 1;
             this.gB_Login.TabStop = false;
             this.gB_Login.Text = "Login";
+            // 
+            // B_SeleLogin
+            // 
+            this.B_SeleLogin.Location = new System.Drawing.Point(119, 82);
+            this.B_SeleLogin.Name = "B_SeleLogin";
+            this.B_SeleLogin.Size = new System.Drawing.Size(75, 23);
+            this.B_SeleLogin.TabIndex = 4;
+            this.B_SeleLogin.Text = "Login";
+            this.B_SeleLogin.UseVisualStyleBackColor = true;
+            this.B_SeleLogin.Click += new System.EventHandler(this.B_SeleLogin_Click);
             // 
             // tB_SelePW
             // 
@@ -120,6 +141,32 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
+            // 
+            // B_DiffLogin
+            // 
+            this.B_DiffLogin.Location = new System.Drawing.Point(119, 109);
+            this.B_DiffLogin.Name = "B_DiffLogin";
+            this.B_DiffLogin.Size = new System.Drawing.Size(75, 23);
+            this.B_DiffLogin.TabIndex = 5;
+            this.B_DiffLogin.Text = "Login";
+            this.B_DiffLogin.UseVisualStyleBackColor = true;
+            this.B_DiffLogin.Click += new System.EventHandler(this.B_DiffLogin_Click);
+            // 
+            // tB_ServerIP
+            // 
+            this.tB_ServerIP.Location = new System.Drawing.Point(67, 28);
+            this.tB_ServerIP.Name = "tB_ServerIP";
+            this.tB_ServerIP.Size = new System.Drawing.Size(100, 20);
+            this.tB_ServerIP.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Server IP";
             // 
             // tB_DiffPW
             // 
@@ -171,42 +218,6 @@
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Diffrent Server";
-            // 
-            // tB_ServerIP
-            // 
-            this.tB_ServerIP.Location = new System.Drawing.Point(67, 28);
-            this.tB_ServerIP.Name = "tB_ServerIP";
-            this.tB_ServerIP.Size = new System.Drawing.Size(100, 20);
-            this.tB_ServerIP.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Server IP";
-            // 
-            // B_SeleLogin
-            // 
-            this.B_SeleLogin.Location = new System.Drawing.Point(119, 82);
-            this.B_SeleLogin.Name = "B_SeleLogin";
-            this.B_SeleLogin.Size = new System.Drawing.Size(75, 23);
-            this.B_SeleLogin.TabIndex = 4;
-            this.B_SeleLogin.Text = "Login";
-            this.B_SeleLogin.UseVisualStyleBackColor = true;
-            this.B_SeleLogin.Click += new System.EventHandler(this.B_SeleLogin_Click);
-            // 
-            // B_DiffLogin
-            // 
-            this.B_DiffLogin.Location = new System.Drawing.Point(119, 109);
-            this.B_DiffLogin.Name = "B_DiffLogin";
-            this.B_DiffLogin.Size = new System.Drawing.Size(75, 23);
-            this.B_DiffLogin.TabIndex = 5;
-            this.B_DiffLogin.Text = "Login";
-            this.B_DiffLogin.UseVisualStyleBackColor = true;
-            this.B_DiffLogin.Click += new System.EventHandler(this.B_DiffLogin_Click);
             // 
             // StartMenu
             // 

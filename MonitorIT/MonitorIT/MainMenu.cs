@@ -137,22 +137,26 @@ namespace MonitorIT
 
                             //Error Message
                             MessageBox.Show("A other Version is on the Server, then on the Client. Please contact you Administrator.");
+                            Program.sockets.Remove(remoteEP);
                             this.Close();
                         }
                     }
                     catch (ArgumentNullException ane)
                     {
                         MessageBox.Show("ArgumentNullException : " + ane.Message);
+                        Program.sockets.Remove(remoteEP);
                         this.Close();
                     }
                     catch (SocketException se)
                     {
-                        MessageBox.Show("The Server did not Respond to the request.");
+                        MessageBox.Show("The Server did not Respond to the request. \n" + se.Message);
+                        Program.sockets.Remove(remoteEP);
                         this.Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Unexpected exception : " + ex.Message);
+                        Program.sockets.Remove(remoteEP);
                         this.Close();
                     }
 
@@ -160,6 +164,7 @@ namespace MonitorIT
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    Program.sockets.Remove(remoteEP);
                     this.Close();
                 }
             }
@@ -189,12 +194,10 @@ namespace MonitorIT
 
         public static string CreateMD5Hash(string input)
         {
-            // Step 1, calculate MD5 hash from input
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            MD5 md5 = MD5.Create();
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
             byte[] hashBytes = md5.ComputeHash(inputBytes);
 
-            // Step 2, convert byte array to hex string
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hashBytes.Length; i++)
             {
@@ -245,6 +248,8 @@ namespace MonitorIT
                 byte[] msg = Encoding.ASCII.GetBytes("disconnect");
                 int bytesSent = socket.Send(msg);
 
+                Program.sockets.Remove(remoteEP);
+
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
             }
@@ -284,9 +289,9 @@ namespace MonitorIT
 
             using(var writer = File.AppendText(StartMenu.connectedServerConfig))
             {
-                if(!contains.Contains(ip + "," + remoteName))
+                if(!contains.Contains(remoteName + "," + ip))
                 {
-                    writer.WriteLine(ip + "," + remoteName);
+                    writer.WriteLine(remoteName + "," + ip);
                 }
                 else
                 {
