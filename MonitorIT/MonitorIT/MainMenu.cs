@@ -278,6 +278,13 @@ namespace MonitorIT
             Application.Run(new Form1());
         }
 
+        public void startSettings()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SettingsWindow());
+        }
+
         private void B_Save_Click(object sender, EventArgs e)
         {
             string[] contains = new string[30];
@@ -297,6 +304,22 @@ namespace MonitorIT
                 {
                     MessageBox.Show("Connection already saved.");
                 }
+            }
+        }
+
+        private void open_Settings_Click(object sender, EventArgs e)
+        {
+            byte[] bytes = new byte[1024];
+            byte[] msg = Encoding.UTF8.GetBytes("get-settings");
+            int bytesSent = socket.Send(msg);
+
+            Thread thread = new Thread(startSettings);
+
+            int bytesRec = socket.Receive(bytes);
+
+            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "sending Settings")
+            {
+                thread.Start();
             }
         }
     }

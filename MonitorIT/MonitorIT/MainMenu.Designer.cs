@@ -36,6 +36,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.open_Dashboard = new System.Windows.Forms.Button();
             this.B_Save = new System.Windows.Forms.Button();
+            this.open_Settings = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.open_Settings);
             this.groupBox2.Controls.Add(this.open_Dashboard);
             this.groupBox2.Location = new System.Drawing.Point(261, 12);
             this.groupBox2.Name = "groupBox2";
@@ -118,6 +120,16 @@
             this.B_Save.Text = "Save this Connection";
             this.B_Save.UseVisualStyleBackColor = true;
             this.B_Save.Click += new System.EventHandler(this.B_Save_Click);
+            // 
+            // open_Settings
+            // 
+            this.open_Settings.Location = new System.Drawing.Point(7, 49);
+            this.open_Settings.Name = "open_Settings";
+            this.open_Settings.Size = new System.Drawing.Size(176, 23);
+            this.open_Settings.TabIndex = 1;
+            this.open_Settings.Text = "Settings";
+            this.open_Settings.UseVisualStyleBackColor = true;
+            this.open_Settings.Click += new System.EventHandler(this.open_Settings_Click);
             // 
             // MainMenu
             // 
@@ -148,5 +160,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button open_Dashboard;
         private System.Windows.Forms.Button B_Save;
+        private System.Windows.Forms.Button open_Settings;
     }
 }

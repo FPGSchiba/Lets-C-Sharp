@@ -64,6 +64,7 @@
             // 
             // cr_CPU
             // 
+            this.cr_CPU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.AxisY.Maximum = 100D;
             chartArea1.AxisY.Minimum = 0D;
             chartArea1.Name = "ChartArea1";
@@ -71,7 +72,7 @@
             legend1.Name = "Legend1";
             this.cr_CPU.Legends.Add(legend1);
             this.cr_CPU.Location = new System.Drawing.Point(38, 64);
-            this.cr_CPU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_CPU.Margin = new System.Windows.Forms.Padding(2);
             this.cr_CPU.Name = "cr_CPU";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
@@ -82,10 +83,10 @@
             this.cr_CPU.Series.Add(series1);
             this.cr_CPU.Size = new System.Drawing.Size(471, 267);
             this.cr_CPU.TabIndex = 2;
-            this.cr_CPU.Text = "v";
             // 
             // cr_GPU
             // 
+            this.cr_GPU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.AxisY.Maximum = 100D;
             chartArea2.AxisY.Minimum = 0D;
             chartArea2.Name = "ChartArea1";
@@ -93,7 +94,7 @@
             legend2.Name = "Legend1";
             this.cr_GPU.Legends.Add(legend2);
             this.cr_GPU.Location = new System.Drawing.Point(38, 432);
-            this.cr_GPU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_GPU.Margin = new System.Windows.Forms.Padding(2);
             this.cr_GPU.Name = "cr_GPU";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
@@ -107,6 +108,7 @@
             // 
             // cr_MEM
             // 
+            this.cr_MEM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea3.AxisY.Maximum = 100D;
             chartArea3.AxisY.Minimum = 0D;
             chartArea3.Name = "ChartArea1";
@@ -114,7 +116,7 @@
             legend3.Name = "Legend1";
             this.cr_MEM.Legends.Add(legend3);
             this.cr_MEM.Location = new System.Drawing.Point(567, 64);
-            this.cr_MEM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_MEM.Margin = new System.Windows.Forms.Padding(2);
             this.cr_MEM.Name = "cr_MEM";
             series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
@@ -128,6 +130,7 @@
             // 
             // cr_DISK_Free
             // 
+            this.cr_DISK_Free.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea4.AxisY.Maximum = 100D;
             chartArea4.AxisY.Minimum = 0D;
             chartArea4.Name = "ChartArea1";
@@ -135,7 +138,7 @@
             legend4.Name = "Legend1";
             this.cr_DISK_Free.Legends.Add(legend4);
             this.cr_DISK_Free.Location = new System.Drawing.Point(567, 432);
-            this.cr_DISK_Free.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_DISK_Free.Margin = new System.Windows.Forms.Padding(2);
             this.cr_DISK_Free.Name = "cr_DISK_Free";
             series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";
@@ -149,12 +152,13 @@
             // 
             // cr_DISK_Usage
             // 
+            this.cr_DISK_Usage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea5.Name = "ChartArea1";
             this.cr_DISK_Usage.ChartAreas.Add(chartArea5);
             legend5.Name = "Legend1";
             this.cr_DISK_Usage.Legends.Add(legend5);
             this.cr_DISK_Usage.Location = new System.Drawing.Point(1098, 64);
-            this.cr_DISK_Usage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_DISK_Usage.Margin = new System.Windows.Forms.Padding(2);
             this.cr_DISK_Usage.Name = "cr_DISK_Usage";
             series5.BorderWidth = 3;
             series5.ChartArea = "ChartArea1";
@@ -168,12 +172,13 @@
             // 
             // cr_FILL
             // 
+            this.cr_FILL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea6.Name = "ChartArea1";
             this.cr_FILL.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
             this.cr_FILL.Legends.Add(legend6);
             this.cr_FILL.Location = new System.Drawing.Point(1098, 432);
-            this.cr_FILL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cr_FILL.Margin = new System.Windows.Forms.Padding(2);
             this.cr_FILL.Name = "cr_FILL";
             series6.BorderWidth = 3;
             series6.ChartArea = "ChartArea1";
@@ -202,7 +207,7 @@
             this.Controls.Add(this.cr_MEM);
             this.Controls.Add(this.cr_GPU);
             this.Controls.Add(this.cr_CPU);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

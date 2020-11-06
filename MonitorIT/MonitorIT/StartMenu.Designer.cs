@@ -54,6 +54,8 @@
             this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.listView1.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.listView1.AllowColumnReorder = true;
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.AutoArrange = false;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -71,6 +73,8 @@
             // 
             // gB_Login
             // 
+            this.gB_Login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gB_Login.Controls.Add(this.B_SeleLogin);
             this.gB_Login.Controls.Add(this.tB_SelePW);
             this.gB_Login.Controls.Add(this.tB_SeleUser);
@@ -85,6 +89,7 @@
             // 
             // B_SeleLogin
             // 
+            this.B_SeleLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.B_SeleLogin.Location = new System.Drawing.Point(119, 82);
             this.B_SeleLogin.Name = "B_SeleLogin";
             this.B_SeleLogin.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +100,8 @@
             // 
             // tB_SelePW
             // 
+            this.tB_SelePW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tB_SelePW.Location = new System.Drawing.Point(66, 56);
             this.tB_SelePW.Name = "tB_SelePW";
             this.tB_SelePW.Size = new System.Drawing.Size(100, 20);
@@ -103,6 +110,8 @@
             // 
             // tB_SeleUser
             // 
+            this.tB_SeleUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tB_SeleUser.Location = new System.Drawing.Point(66, 27);
             this.tB_SeleUser.Name = "tB_SeleUser";
             this.tB_SeleUser.Size = new System.Drawing.Size(100, 20);
@@ -128,6 +137,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.B_DiffLogin);
             this.groupBox1.Controls.Add(this.tB_ServerIP);
             this.groupBox1.Controls.Add(this.label7);
@@ -144,6 +155,7 @@
             // 
             // B_DiffLogin
             // 
+            this.B_DiffLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.B_DiffLogin.Location = new System.Drawing.Point(119, 109);
             this.B_DiffLogin.Name = "B_DiffLogin";
             this.B_DiffLogin.Size = new System.Drawing.Size(75, 23);
@@ -154,6 +166,8 @@
             // 
             // tB_ServerIP
             // 
+            this.tB_ServerIP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tB_ServerIP.Location = new System.Drawing.Point(67, 28);
             this.tB_ServerIP.Name = "tB_ServerIP";
             this.tB_ServerIP.Size = new System.Drawing.Size(100, 20);
@@ -170,6 +184,8 @@
             // 
             // tB_DiffPW
             // 
+            this.tB_DiffPW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tB_DiffPW.Location = new System.Drawing.Point(67, 83);
             this.tB_DiffPW.Name = "tB_DiffPW";
             this.tB_DiffPW.Size = new System.Drawing.Size(100, 20);
@@ -178,6 +194,8 @@
             // 
             // tB_DiffUser
             // 
+            this.tB_DiffUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tB_DiffUser.Location = new System.Drawing.Point(67, 54);
             this.tB_DiffUser.Name = "tB_DiffUser";
             this.tB_DiffUser.Size = new System.Drawing.Size(100, 20);
@@ -203,6 +221,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(390, 12);
             this.label5.Name = "label5";
@@ -212,6 +233,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(390, 272);
             this.label6.Name = "label6";
