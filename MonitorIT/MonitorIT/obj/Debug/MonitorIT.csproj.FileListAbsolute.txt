@@ -22,3 +22,6 @@ D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.StartMenu.resourc
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.MainMenu.resources
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.Login.resources
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.SettingsWindow.resources
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.CopyComplete

@@ -11,133 +11,133 @@ namespace MonitorIT
 {
     public partial class Settings
     {
-        [JsonProperty("overview")]
+        [JsonProperty("Overview")]
         public Overview Overview { get; set; }
 
-        [JsonProperty("connection")]
+        [JsonProperty("Connection")]
         public Connection Connection { get; set; }
 
-        [JsonProperty("warning")]
+        [JsonProperty("Warning")]
         public Warning Warning { get; set; }
 
-        [JsonProperty("mail")]
+        [JsonProperty("Mail")]
         public Mail Mail { get; set; }
     }
 
     public partial class Connection
     {
-        [JsonProperty("tries")]
+        [JsonProperty("Tries")]
         public long Tries { get; set; }
     }
 
     public partial class Mail
     {
-        [JsonProperty("sending")]
+        [JsonProperty("Sending")]
         public Sending Sending { get; set; }
 
-        [JsonProperty("to-mail")]
-        public string[] ToMail { get; set; }
+        [JsonProperty("ToMail")]
+        public List<string> ToMail { get; set; }
     }
 
     public partial class Sending
     {
-        [JsonProperty("server")]
+        [JsonProperty("Server")]
         public Server Server { get; set; }
 
-        [JsonProperty("sender-mail")]
+        [JsonProperty("SenderMail")]
         public string SenderMail { get; set; }
 
-        [JsonProperty("password")]
+        [JsonProperty("Password")]
         public string Password { get; set; }
 
-        [JsonProperty("subject")]
+        [JsonProperty("Subject")]
         public string Subject { get; set; }
 
-        [JsonProperty("additional")]
+        [JsonProperty("Additional")]
         public string Additional { get; set; }
     }
 
     public partial class Server
     {
-        [JsonProperty("name")]
+        [JsonProperty("Name")]
         public string Name { get; set; }
 
-        [JsonProperty("port")]
+        [JsonProperty("Port")]
         public long Port { get; set; }
     }
 
     public partial class Overview
     {
-        [JsonProperty("status")]
+        [JsonProperty("Status")]
         public Status Status { get; set; }
     }
 
     public partial class Status
     {
-        [JsonProperty("good")]
+        [JsonProperty("Good")]
         public Good Good { get; set; }
 
-        [JsonProperty("ok")]
+        [JsonProperty("Ok")]
         public Ok Ok { get; set; }
 
-        [JsonProperty("less")]
+        [JsonProperty("Less")]
         public Less Less { get; set; }
 
-        [JsonProperty("bad")]
+        [JsonProperty("Bad")]
         public Bad Bad { get; set; }
     }
 
     public partial class Bad
     {
-        [JsonProperty("badMin")]
+        [JsonProperty("BadMin")]
         public long BadMin { get; set; }
 
-        [JsonProperty("badMax")]
+        [JsonProperty("BadMax")]
         public long BadMax { get; set; }
     }
 
     public partial class Good
     {
-        [JsonProperty("goodMin")]
+        [JsonProperty("GoodMin")]
         public long GoodMin { get; set; }
 
-        [JsonProperty("goodMax")]
+        [JsonProperty("GoodMax")]
         public long GoodMax { get; set; }
     }
 
     public partial class Less
     {
-        [JsonProperty("lessMin")]
+        [JsonProperty("LessMin")]
         public long LessMin { get; set; }
 
-        [JsonProperty("lessMax")]
+        [JsonProperty("LessMax")]
         public long LessMax { get; set; }
     }
 
     public partial class Ok
     {
-        [JsonProperty("okMin")]
+        [JsonProperty("OkMin")]
         public long OkMin { get; set; }
 
-        [JsonProperty("okMax")]
+        [JsonProperty("OkMax")]
         public long OkMax { get; set; }
     }
 
     public partial class Warning
     {
-        [JsonProperty("CPUMax")]
+        [JsonProperty("CpuMax")]
         public long CpuMax { get; set; }
 
-        [JsonProperty("GPUMax")]
+        [JsonProperty("GpuMax")]
         public long GpuMax { get; set; }
 
-        [JsonProperty("MEMMax")]
+        [JsonProperty("MemMax")]
         public long MemMax { get; set; }
 
-        [JsonProperty("DPCMax")]
+        [JsonProperty("DpcMax")]
         public long DpcMax { get; set; }
 
-        [JsonProperty("DFRMax")]
+        [JsonProperty("DfrMax")]
         public long DfrMax { get; set; }
     }
 
