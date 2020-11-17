@@ -69,6 +69,7 @@
             this.listView1.TabStop = false;
             this.listView1.TileSize = new System.Drawing.Size(50, 50);
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             // 
             // gB_Login

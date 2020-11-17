@@ -65,6 +65,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.Mail = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tB_Mail_AddMail = new System.Windows.Forms.TextBox();
             this.lB_Mail_Mails = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rtB_Mail_AdditionalInfo = new System.Windows.Forms.RichTextBox();
@@ -82,8 +84,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.B_Save = new System.Windows.Forms.Button();
-            this.tB_Mail_AddMail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -452,6 +452,23 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "receiver Mail";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add Mail";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddMail);
+            // 
+            // tB_Mail_AddMail
+            // 
+            this.tB_Mail_AddMail.Location = new System.Drawing.Point(6, 174);
+            this.tB_Mail_AddMail.Name = "tB_Mail_AddMail";
+            this.tB_Mail_AddMail.Size = new System.Drawing.Size(127, 20);
+            this.tB_Mail_AddMail.TabIndex = 1;
+            // 
             // lB_Mail_Mails
             // 
             this.lB_Mail_Mails.FormattingEnabled = true;
@@ -525,8 +542,10 @@
             // 
             this.tB_Mail_SenderPassword.Location = new System.Drawing.Point(89, 50);
             this.tB_Mail_SenderPassword.Name = "tB_Mail_SenderPassword";
+            this.tB_Mail_SenderPassword.PasswordChar = '*';
             this.tB_Mail_SenderPassword.Size = new System.Drawing.Size(140, 20);
             this.tB_Mail_SenderPassword.TabIndex = 4;
+            this.tB_Mail_SenderPassword.UseSystemPasswordChar = true;
             this.tB_Mail_SenderPassword.TextChanged += new System.EventHandler(this.TextChanged);
             // 
             // tB_Mail_SenderMail
@@ -612,23 +631,6 @@
             this.B_Save.UseVisualStyleBackColor = true;
             this.B_Save.Visible = false;
             this.B_Save.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tB_Mail_AddMail
-            // 
-            this.tB_Mail_AddMail.Location = new System.Drawing.Point(6, 174);
-            this.tB_Mail_AddMail.Name = "tB_Mail_AddMail";
-            this.tB_Mail_AddMail.Size = new System.Drawing.Size(127, 20);
-            this.tB_Mail_AddMail.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(139, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add Mail";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.AddMail);
             // 
             // SettingsWindow
             // 

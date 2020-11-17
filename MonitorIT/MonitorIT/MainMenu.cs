@@ -269,6 +269,10 @@ namespace MonitorIT
             {
                 thread.Start();
             }
+            else
+            {
+                MessageBox.Show("Unexpected answer from Server.");
+            }
         }
 
         public void startDashboard()
@@ -283,6 +287,13 @@ namespace MonitorIT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SettingsWindow());
+        }
+
+        public void startUsers()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Users());
         }
 
         private void B_Save_Click(object sender, EventArgs e)
@@ -320,6 +331,29 @@ namespace MonitorIT
             if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "sending Settings")
             {
                 thread.Start();
+            }
+            else
+            {
+                MessageBox.Show("Unexpected answer from Server.");
+            }
+        }
+
+        private void B_Users_Click(object sender, EventArgs e)
+        {
+            byte[] bytes = new byte[1024];
+            byte[] msg = Encoding.UTF8.GetBytes("get-user");
+            socket.Send(msg);
+
+            Thread thread = new Thread(startUsers);
+
+            int bytesRec = socket.Receive(bytes);
+            if (Encoding.UTF8.GetString(bytes, 0, bytesRec) == "sending Users")
+            {
+                thread.Start();
+            }
+            else
+            {
+                MessageBox.Show("Unexpected answer from Server.");
             }
         }
     }

@@ -25,3 +25,15 @@ D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.SettingsWindow.re
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\Newtonsoft.Json.dll
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\Newtonsoft.Json.xml
 D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.csproj.CopyComplete
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.Helpers.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.Razor.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.Razor.dll
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.Helpers.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.Razor.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GitHub\Lets-C-Sharp\MonitorIT\MonitorIT\obj\Debug\MonitorIT.Users.resources

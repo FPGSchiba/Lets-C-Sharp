@@ -34,9 +34,10 @@
             this.OV_User = new System.Windows.Forms.Label();
             this.OV_Crit = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.open_Settings = new System.Windows.Forms.Button();
             this.open_Dashboard = new System.Windows.Forms.Button();
             this.B_Save = new System.Windows.Forms.Button();
-            this.open_Settings = new System.Windows.Forms.Button();
+            this.B_Users = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.B_Users);
             this.groupBox2.Controls.Add(this.open_Settings);
             this.groupBox2.Controls.Add(this.open_Dashboard);
             this.groupBox2.Location = new System.Drawing.Point(261, 12);
@@ -100,6 +102,16 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Open";
+            // 
+            // open_Settings
+            // 
+            this.open_Settings.Location = new System.Drawing.Point(7, 49);
+            this.open_Settings.Name = "open_Settings";
+            this.open_Settings.Size = new System.Drawing.Size(176, 23);
+            this.open_Settings.TabIndex = 1;
+            this.open_Settings.Text = "Settings";
+            this.open_Settings.UseVisualStyleBackColor = true;
+            this.open_Settings.Click += new System.EventHandler(this.open_Settings_Click);
             // 
             // open_Dashboard
             // 
@@ -121,15 +133,15 @@
             this.B_Save.UseVisualStyleBackColor = true;
             this.B_Save.Click += new System.EventHandler(this.B_Save_Click);
             // 
-            // open_Settings
+            // B_Users
             // 
-            this.open_Settings.Location = new System.Drawing.Point(7, 49);
-            this.open_Settings.Name = "open_Settings";
-            this.open_Settings.Size = new System.Drawing.Size(176, 23);
-            this.open_Settings.TabIndex = 1;
-            this.open_Settings.Text = "Settings";
-            this.open_Settings.UseVisualStyleBackColor = true;
-            this.open_Settings.Click += new System.EventHandler(this.open_Settings_Click);
+            this.B_Users.Location = new System.Drawing.Point(6, 78);
+            this.B_Users.Name = "B_Users";
+            this.B_Users.Size = new System.Drawing.Size(176, 23);
+            this.B_Users.TabIndex = 2;
+            this.B_Users.Text = "Users";
+            this.B_Users.UseVisualStyleBackColor = true;
+            this.B_Users.Click += new System.EventHandler(this.B_Users_Click);
             // 
             // MainMenu
             // 
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Button open_Dashboard;
         private System.Windows.Forms.Button B_Save;
         private System.Windows.Forms.Button open_Settings;
+        private System.Windows.Forms.Button B_Users;
     }
 }
