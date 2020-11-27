@@ -82,6 +82,8 @@ namespace YT2mp3_mp4
         private async void startConvertURL()
         {
             await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_Vtitel.Visible = true; }))));
+            await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_timeCodeLast.Visible = true; }))));
+            await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_timeCodeCurrent.Visible = true; }))));
 
             try
             {
@@ -97,6 +99,7 @@ namespace YT2mp3_mp4
 
                 var youTube = YouTube.Default;
                 var video = youTube.GetVideo(URL);
+                MessageBox.Show(video.Format.ToString());
                 await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_Vtitel.Text = video.Title; }))));
                 byte[] videoRAW = video.GetBytes();
 
@@ -113,7 +116,15 @@ namespace YT2mp3_mp4
 
                         try
                         {
-                            await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; } catch { } }))));
+                            if (!isMP4)
+                            {
+                                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 50 / videoRAW.Length; } catch { } }))));
+                            }
+                            else
+                            {
+                                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; } catch { } }))));
+                            }
+
                         }
                         catch (Exception e)
                         {
@@ -135,7 +146,7 @@ namespace YT2mp3_mp4
                     .SetPreset(ConversionPreset.UltraFast);
                     conversion.OnProgress += async (sender, args) =>
                     {
-                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = args.Percent; }))));
+                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = Convert.ToInt32(Convert.ToDouble(args.Percent) * 0.5 + 50); }))));
                     };
 
                     await conversion.Start();

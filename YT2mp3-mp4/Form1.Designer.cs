@@ -36,6 +36,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.L_Vtitel = new System.Windows.Forms.Label();
             this.saveFileDialogMP4 = new System.Windows.Forms.SaveFileDialog();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.L_timeCodeLast = new System.Windows.Forms.Label();
+            this.L_timeCodeCurrent = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -54,16 +58,18 @@
             // 
             // pB_FileProgress
             // 
-            this.pB_FileProgress.Location = new System.Drawing.Point(12, 73);
+            this.pB_FileProgress.Location = new System.Drawing.Point(11, 41);
+            this.pB_FileProgress.Margin = new System.Windows.Forms.Padding(2);
             this.pB_FileProgress.Name = "pB_FileProgress";
-            this.pB_FileProgress.Size = new System.Drawing.Size(516, 29);
+            this.pB_FileProgress.Size = new System.Drawing.Size(344, 19);
             this.pB_FileProgress.TabIndex = 0;
             // 
             // B_Path
             // 
-            this.B_Path.Location = new System.Drawing.Point(12, 22);
+            this.B_Path.Location = new System.Drawing.Point(11, 14);
+            this.B_Path.Margin = new System.Windows.Forms.Padding(2);
             this.B_Path.Name = "B_Path";
-            this.B_Path.Size = new System.Drawing.Size(75, 35);
+            this.B_Path.Size = new System.Drawing.Size(50, 23);
             this.B_Path.TabIndex = 3;
             this.B_Path.Text = "Pick File";
             this.B_Path.UseVisualStyleBackColor = true;
@@ -71,9 +77,10 @@
             // 
             // B_Convert
             // 
-            this.B_Convert.Location = new System.Drawing.Point(595, 73);
+            this.B_Convert.Location = new System.Drawing.Point(370, 31);
+            this.B_Convert.Margin = new System.Windows.Forms.Padding(2);
             this.B_Convert.Name = "B_Convert";
-            this.B_Convert.Size = new System.Drawing.Size(93, 44);
+            this.B_Convert.Size = new System.Drawing.Size(62, 29);
             this.B_Convert.TabIndex = 5;
             this.B_Convert.Text = "Convert";
             this.B_Convert.UseVisualStyleBackColor = true;
@@ -81,9 +88,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 22);
+            this.button1.Location = new System.Drawing.Point(69, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
+            this.button1.Size = new System.Drawing.Size(73, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Web-URL";
             this.button1.UseVisualStyleBackColor = true;
@@ -92,9 +100,10 @@
             // L_Vtitel
             // 
             this.L_Vtitel.AutoSize = true;
-            this.L_Vtitel.Location = new System.Drawing.Point(219, 29);
+            this.L_Vtitel.Location = new System.Drawing.Point(155, 19);
+            this.L_Vtitel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Vtitel.Name = "L_Vtitel";
-            this.L_Vtitel.Size = new System.Drawing.Size(108, 20);
+            this.L_Vtitel.Size = new System.Drawing.Size(73, 13);
             this.L_Vtitel.TabIndex = 10;
             this.L_Vtitel.Text = "Name (bald) (:";
             this.L_Vtitel.Visible = false;
@@ -106,19 +115,52 @@
             this.saveFileDialogMP4.Filter = "*.mp4|";
             this.saveFileDialogMP4.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMP4_FileOk);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(54, 65);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(343, 45);
+            this.trackBar1.TabIndex = 11;
+            this.trackBar1.Visible = false;
+            // 
+            // L_timeCodeLast
+            // 
+            this.L_timeCodeLast.AutoSize = true;
+            this.L_timeCodeLast.Location = new System.Drawing.Point(397, 82);
+            this.L_timeCodeLast.Name = "L_timeCodeLast";
+            this.L_timeCodeLast.Size = new System.Drawing.Size(35, 13);
+            this.L_timeCodeLast.TabIndex = 12;
+            this.L_timeCodeLast.Text = "label1";
+            this.L_timeCodeLast.Visible = false;
+            // 
+            // L_timeCodeCurrent
+            // 
+            this.L_timeCodeCurrent.AutoSize = true;
+            this.L_timeCodeCurrent.Location = new System.Drawing.Point(13, 82);
+            this.L_timeCodeCurrent.Name = "L_timeCodeCurrent";
+            this.L_timeCodeCurrent.Size = new System.Drawing.Size(35, 13);
+            this.L_timeCodeCurrent.TabIndex = 13;
+            this.L_timeCodeCurrent.Text = "label1";
+            this.L_timeCodeCurrent.Visible = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 131);
+            this.ClientSize = new System.Drawing.Size(456, 121);
+            this.Controls.Add(this.L_timeCodeCurrent);
+            this.Controls.Add(this.L_timeCodeLast);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.L_Vtitel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.B_Convert);
             this.Controls.Add(this.B_Path);
             this.Controls.Add(this.pB_FileProgress);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Converter";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +176,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label L_Vtitel;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMP4;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label L_timeCodeLast;
+        private System.Windows.Forms.Label L_timeCodeCurrent;
     }
 }
 
