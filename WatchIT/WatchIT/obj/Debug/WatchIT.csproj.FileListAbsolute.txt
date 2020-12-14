@@ -16,3 +16,7 @@ D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\AxInterop.RDPCOMAPILib
 D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\WatchIT.Connect.resources
 D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\WatchIT.Main.resources
 D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\WatchIT.Viewer.resources
+D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\bin\Debug\WatchIT.exe.manifest
+D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\bin\Debug\WatchIT.application
+D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\WatchIT.exe.manifest
+D:\Projects\GitHub\Lets-C-Sharp\WatchIT\WatchIT\obj\Debug\WatchIT.application
