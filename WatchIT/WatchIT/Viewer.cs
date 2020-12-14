@@ -22,8 +22,8 @@ namespace WatchIT
             string Invitation = "";
             Application.OpenForms["Connect"].Invoke(new Action(() => { Invitation = (Application.OpenForms["Connect"] as Connect).Invitation; }));
             axRDPViewer1.Connect(Invitation, "User-" + Environment.MachineName.ToString(), " &5CQUe$#GT%9qr4Su6cE$FFA+A!-UD");
-
-            axRDPViewer1.Scale(new SizeF(Size));
+            axRDPViewer1.SmartSizing = true;
+            axRDPViewer1.ShowPropertyPages();
         }
 
         private void axRDPViewer1_OnAttendeeDisconnected(object sender, AxRDPCOMAPILib._IRDPSessionEvents_OnAttendeeDisconnectedEvent e)

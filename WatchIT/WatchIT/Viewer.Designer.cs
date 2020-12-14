@@ -40,7 +40,8 @@ namespace WatchIT
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.axRDPViewer1.Enabled = true;
-            this.axRDPViewer1.Location = new System.Drawing.Point(0, 2);
+            this.axRDPViewer1.Location = new System.Drawing.Point(0, 0);
+            this.axRDPViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.axRDPViewer1.Name = "axRDPViewer1";
             this.axRDPViewer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axRDPViewer1.OcxState")));
             this.axRDPViewer1.Size = new System.Drawing.Size(799, 457);

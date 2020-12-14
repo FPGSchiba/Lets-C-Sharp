@@ -23,7 +23,6 @@ namespace WatchIT
         private void button1_Click(object sender, EventArgs e)
         {
             Invitation = textBox1.Text;
-            MessageBox.Show(Invitation);
             Thread t = new Thread(openViewer);
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
