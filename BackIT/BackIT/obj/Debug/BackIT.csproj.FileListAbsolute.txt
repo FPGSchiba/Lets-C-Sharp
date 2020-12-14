@@ -1,0 +1,7 @@
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\bin\Debug\BackIT.exe.config
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\bin\Debug\BackIT.exe
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\bin\Debug\BackIT.pdb
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\obj\Debug\BackIT.csprojAssemblyReference.cache
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\obj\Debug\BackIT.csproj.CoreCompileInputs.cache
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\obj\Debug\BackIT.exe
+D:\Projects\GitHub\Lets-C-Sharp\BackIT\BackIT\obj\Debug\BackIT.pdb

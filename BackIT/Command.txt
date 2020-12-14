@@ -1,0 +1,4 @@
+BackIT.exe -ftp <hostname> <username> <password> <remotePath> -local <path>
+BackIT.exe -local <path> -local <path>
+BackIT.exe -local <path> -ftp <hostname> <port> <username> <password> <remotePath>
+BackIT.exe -ftp <hostname> <username> <password> <remotePath> -ftp <hostname> <username> <password> <remotePath>
