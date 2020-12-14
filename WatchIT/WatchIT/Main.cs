@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace WatchIT
 {
@@ -27,6 +28,21 @@ namespace WatchIT
         {
             Host host = new Host();
             host.Show();
+        }
+
+        private void checkRegistry()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations");
+
+            if (key != null)
+            {
+                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations", "DWMFRAMEINTERVAL", 60);
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            checkRegistry();
         }
     }
 }

@@ -55,6 +55,7 @@ namespace WatchIT
             this.Controls.Add(this.axRDPViewer1);
             this.Name = "Viewer";
             this.Text = "Watch";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Viewer_FormClosing);
             this.Load += new System.EventHandler(this.Viewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axRDPViewer1)).EndInit();
             this.ResumeLayout(false);

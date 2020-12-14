@@ -22,22 +22,18 @@ namespace WatchIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Invitation = textBox1.Text;// "";// Interaction.InputBox("Insert Invitation ConnectionString", "Attention");
+            Invitation = textBox1.Text;
+            MessageBox.Show(Invitation);
             Thread t = new Thread(openViewer);
+            t.SetApartmentState(ApartmentState.STA);
             t.Start();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.OpenForms["Viewer"].Invoke(new Action(() => { (Application.OpenForms["Viewer"] as Viewer).axRDPViewer1.Disconnect(); }));
-            this.Close();
         }
 
         private void openViewer()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Viewer());
         }
     }
 }
