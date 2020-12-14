@@ -47,6 +47,7 @@ namespace WatchIT
             this.axRDPViewer1.Size = new System.Drawing.Size(799, 457);
             this.axRDPViewer1.TabIndex = 0;
             this.axRDPViewer1.OnAttendeeDisconnected += new AxRDPCOMAPILib._IRDPSessionEvents_OnAttendeeDisconnectedEventHandler(this.axRDPViewer1_OnAttendeeDisconnected);
+            this.axRDPViewer1.ClientSizeChanged += new System.EventHandler(this.axRDPViewer1_ClientSizeChanged);
             // 
             // Viewer
             // 

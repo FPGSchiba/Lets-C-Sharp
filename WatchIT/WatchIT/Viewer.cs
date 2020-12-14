@@ -35,5 +35,10 @@ namespace WatchIT
         {
             axRDPViewer1.Disconnect();
         }
+
+        private void axRDPViewer1_ClientSizeChanged(object sender, EventArgs e)
+        {
+            this.Size = axRDPViewer1.ClientSize;
+        }
     }
 }

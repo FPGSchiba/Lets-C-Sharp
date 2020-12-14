@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Projects\GitHub\Lets-C-Sharp\WatchIT\Publish\1.0\</PublishUrl>
+    <PublishUrl>D:\Projects\GitHub\Lets-C-Sharp\WatchIT\Publish\1.1\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
