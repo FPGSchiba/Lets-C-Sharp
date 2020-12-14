@@ -19,9 +19,8 @@ namespace WatchIT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connect());
+            Connect conn = new Connect();
+            conn.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
