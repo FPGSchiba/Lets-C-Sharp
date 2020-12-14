@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hzw/RMu598miPLq0tR2avFrP/sjEaP9XTImXwmOsZgw=</dsig:DigestValue>
+        <dsig:DigestValue>GIGlVyoOTlcmVY1115jri6bQoIV79MYVaU5iJWcfxQU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WatchIT.exe" size="14256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WatchIT.exe" size="14768">
       <assemblyIdentity name="WatchIT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RL4iyf58Akye5Vmg+b2coBuOC4q/Su9Db1dD9Ute+/k=</dsig:DigestValue>
+        <dsig:DigestValue>sUeDqHyLj6RGyiWFjpEXZHBjql77w2VMdvWm45CTXJc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
