@@ -41,7 +41,7 @@ namespace WatchIT
 
         private void Disconnect(object Guest)
         {
-            this.Visible = true;   
+            this.Visible = true;
         }
     }
 }
