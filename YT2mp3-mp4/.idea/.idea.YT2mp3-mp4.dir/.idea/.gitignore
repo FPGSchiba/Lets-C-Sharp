@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.YT2mp3-mp4.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Projects\GitHub\Lets-C-Sharp\YT2mp3-mp4\.idea\.idea.YT2mp3-mp4.dir\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
