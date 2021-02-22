@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.SSLClient.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Users\jann.erhardt\RiderProjects\SSLClient\.idea\.idea.SSLClient\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

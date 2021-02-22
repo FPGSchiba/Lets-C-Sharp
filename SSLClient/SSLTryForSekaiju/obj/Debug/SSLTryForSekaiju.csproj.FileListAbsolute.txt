@@ -1,0 +1,6 @@
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\bin\Debug\SSLTryForSekaiju.exe
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\bin\Debug\SSLTryForSekaiju.pdb
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.csprojAssemblyReference.cache
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.csproj.CoreCompileInputs.cache
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.exe
+C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.pdb
