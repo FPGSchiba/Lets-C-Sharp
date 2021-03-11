@@ -23,10 +23,6 @@ namespace SSLTryForSekaiju
                 {
                     return true;   
                 }
-                if ((sslPolicyErrors & SslPolicyErrors.RemoteCertificateChainErrors) != 0)
-                {
-                    return true;
-                }
                 Console.WriteLine("Certificate error: {0}", sslPolicyErrors);
                 
                return false;
@@ -34,7 +30,7 @@ namespace SSLTryForSekaiju
 
             private static void RunClient(string machineName, string serverName)
             {
-                TcpClient client = new TcpClient(machineName,14271);
+                TcpClient client = new TcpClient(machieName,14271);
                 Console.WriteLine("Client connected.");
                 SslStream sslStream = new SslStream(
                     client.GetStream(),
