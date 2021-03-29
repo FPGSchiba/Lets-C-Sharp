@@ -4,3 +4,9 @@ C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryF
 C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.csproj.CoreCompileInputs.cache
 C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.exe
 C:\Users\jann.erhardt\RiderProjects\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.pdb
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.csprojAssemblyReference.cache
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.csproj.CoreCompileInputs.cache
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.exe
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\obj\Debug\SSLTryForSekaiju.pdb
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\bin\Debug\SSLTryForSekaiju.exe
+D:\Projects\GitHub\Lets-C-Sharp\SSLClient\SSLTryForSekaiju\bin\Debug\SSLTryForSekaiju.pdb
