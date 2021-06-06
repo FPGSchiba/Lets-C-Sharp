@@ -1,0 +1,31 @@
+{
+    "Name": "Test DB",
+    "Password": "098f6bcd4621d373cade4e832627b4f6",
+    "ImageCryptKey": "test",
+    "root":{
+        "FolderCount": 2,
+        "ItemCount": 0,
+        "TestFolder1":{
+            "FolderCount": 1,
+            "ItemCount": 0,
+            "SubFolder1":{
+                "FolderCount": 0,
+                "ItemCount": 1,
+                "Image-00001":{
+                    "Name": "Test_Image",
+                    "Description": "This is a test image",
+                    "Location": "C:\\Users\\Jann\\OneDrive - UMB AG\\Bilder\\Test\\Johnny.jpg"
+                }
+            }
+        },
+        "TestFolder2":{
+            "FolderCount": 0,
+            "ItemCount": 1,
+            "Image-00002":{
+                "Name": "Test_Image",
+                "Description": "This is the 2nd test image",
+                "Location": "C:\\Users\\Jann\\OneDrive - UMB AG\\Bilder\\Test\\DestKayde.jpg"
+            }
+        }
+    }
+}
