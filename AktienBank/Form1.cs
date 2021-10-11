@@ -18,11 +18,19 @@ namespace AktienBank
             InitializeComponent();
         }
 
-        int oldMax;
-        int Mohatu;
-        int Uru;
-        int Nuka;
-        int Chumvi;
+        int stock1;
+        int stock2;
+        int stock3;
+        int stock4;
+        int stock5;
+
+        int interval = 1000;
+
+        string stock1Name = "None";
+        string stock2Name = "Hi";
+        string stock3Name = "Bye";
+        string stock4Name = "Wyld";
+        string stock5Name = "Mild";
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -33,48 +41,48 @@ namespace AktienBank
         {
             List<int> all = new List<int>();
 
-            Mohatu += round(getRandom(), 10);
-            Uru += round(getRandom(), 10);
-            Nuka += round(getRandom(), 10);
-            Chumvi += round(getRandom(), 10);
+            stock2 += round(getRandom(), 10);
+            stock3 += round(getRandom(), 10);
+            stock4 += round(getRandom(), 10);
+            stock5 += round(getRandom(), 10);
 
-            all.Add(Mohatu);
-            all.Add(Uru);
-            all.Add(Nuka);
-            all.Add(Chumvi);
+            all.Add(stock2);
+            all.Add(stock3);
+            all.Add(stock4);
+            all.Add(stock5);
 
-            Mohatu_Int.Text = "Mohatu AG: " + Mohatu;
-            Uru_Int.Text = "Uru Consulting: " + Uru;
-            Nuka_Int.Text = "Nuka: " + Nuka;
-            Chumvi_Int.Text = "Chumvi RGB: " + Chumvi;
-
-            if(oldMax < all.Max())
+            if(stock1 < all.Max())
             {
-                oldMax = all.Max();
+                stock1 = all.Max();
                 chart1.ChartAreas[0].AxisY.Maximum = all.Max() + 10;
             }
 
-            if (Mohatu <= 0)
+            if (stock2 <= 0)
             {
-                Mohatu = 0;
+                stock2 = 0;
             }
-            if (Uru <= 0)
+            if (stock3 <= 0)
             {
-                Uru = 0;
+                stock3 = 0;
             }
-            if (Nuka <= 0)
+            if (stock4 <= 0)
             {
-                Nuka = 0;
+                stock4 = 0;
             }
-            if (Chumvi <= 0)
+            if (stock5 <= 0)
             {
-                Chumvi = 0;
+                stock5 = 0;
             }
 
-            chart1.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), Mohatu);
-            chart1.Series[1].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), Uru);
-            chart1.Series[2].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), Nuka);
-            chart1.Series[3].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), Chumvi);
+            tb_stock2.Text = stock2Name + ": " + stock2;
+            tb_stock3.Text = stock3Name + ": " + stock3;
+            tb_stock4.Text = stock4Name + ": " + stock4;
+            tb_stock5.Text = stock5Name + ": " + stock5;
+
+            chart1.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), stock2);
+            chart1.Series[1].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), stock3);
+            chart1.Series[2].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), stock4);
+            chart1.Series[3].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), stock5);
 
             if (chart1.Series[0].Points.Count == 10)
             {
@@ -94,8 +102,8 @@ namespace AktienBank
             catch
             {
                 MessageBox.Show("Bitte nur Nummern, als Wert eintragen.");
+                return IntExtension.Between(-40, 40);
             }
-            return IntExtension.Between(-40, 40);
         }
 
         private int startProg()
@@ -123,10 +131,17 @@ namespace AktienBank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Mohatu = round(startProg(), 10);
-            Uru = round(startProg(), 10);
-            Nuka = round(startProg(), 10);
-            Chumvi = round(startProg(), 10);
+            chart1.Series[0].Name = stock2Name;
+            chart1.Series[1].Name = stock3Name;
+            chart1.Series[2].Name = stock4Name;
+            chart1.Series[3].Name = stock5Name;
+
+            //TODO: change names of stocks with Variables
+            timer.Interval = interval;
+            stock2 = round(startProg(), 10);
+            stock3 = round(startProg(), 10);
+            stock4 = round(startProg(), 10);
+            stock5 = round(startProg(), 10);
 
             for(int i = 0; i <= 5; i++)
             {

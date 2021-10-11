@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.Mohatu_Int = new System.Windows.Forms.Label();
-            this.Uru_Int = new System.Windows.Forms.Label();
-            this.Nuka_Int = new System.Windows.Forms.Label();
-            this.Chumvi_Int = new System.Windows.Forms.Label();
+            this.tb_stock2 = new System.Windows.Forms.Label();
+            this.tb_stock3 = new System.Windows.Forms.Label();
+            this.tb_stock4 = new System.Windows.Forms.Label();
+            this.tb_stock5 = new System.Windows.Forms.Label();
             this.tB_Worth = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -50,37 +50,37 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AxisY.Maximum = 100D;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisY.Maximum = 100D;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(1, 1);
             this.chart1.Name = "chart1";
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Mohatu AG";
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Uru Consulting";
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Nuka";
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Chumvi RGB";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series5.BorderWidth = 5;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Legend = "Legend1";
+            series5.Name = "Mohatu AG";
+            series6.BorderWidth = 5;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.Name = "Uru Consulting";
+            series7.BorderWidth = 5;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Legend = "Legend1";
+            series7.Name = "Nuka";
+            series8.BorderWidth = 5;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Legend = "Legend1";
+            series8.Name = "Chumvi RGB";
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1224, 653);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Chart";
@@ -91,45 +91,45 @@
             this.timer.Interval = 300000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // Mohatu_Int
+            // tb_stock2
             // 
-            this.Mohatu_Int.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Mohatu_Int.AutoSize = true;
-            this.Mohatu_Int.Location = new System.Drawing.Point(1071, 109);
-            this.Mohatu_Int.Name = "Mohatu_Int";
-            this.Mohatu_Int.Size = new System.Drawing.Size(86, 13);
-            this.Mohatu_Int.TabIndex = 1;
-            this.Mohatu_Int.Text = "Mohatu AG: zahl";
+            this.tb_stock2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_stock2.AutoSize = true;
+            this.tb_stock2.Location = new System.Drawing.Point(1071, 109);
+            this.tb_stock2.Name = "tb_stock2";
+            this.tb_stock2.Size = new System.Drawing.Size(53, 13);
+            this.tb_stock2.TabIndex = 1;
+            this.tb_stock2.Text = "Filler: zahl";
             // 
-            // Uru_Int
+            // tb_stock3
             // 
-            this.Uru_Int.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Uru_Int.AutoSize = true;
-            this.Uru_Int.Location = new System.Drawing.Point(1071, 140);
-            this.Uru_Int.Name = "Uru_Int";
-            this.Uru_Int.Size = new System.Drawing.Size(101, 13);
-            this.Uru_Int.TabIndex = 2;
-            this.Uru_Int.Text = "Uru Consulting: zahl";
+            this.tb_stock3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_stock3.AutoSize = true;
+            this.tb_stock3.Location = new System.Drawing.Point(1071, 140);
+            this.tb_stock3.Name = "tb_stock3";
+            this.tb_stock3.Size = new System.Drawing.Size(53, 13);
+            this.tb_stock3.TabIndex = 2;
+            this.tb_stock3.Text = "Filler: zahl";
             // 
-            // Nuka_Int
+            // tb_stock4
             // 
-            this.Nuka_Int.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Nuka_Int.AutoSize = true;
-            this.Nuka_Int.Location = new System.Drawing.Point(1071, 174);
-            this.Nuka_Int.Name = "Nuka_Int";
-            this.Nuka_Int.Size = new System.Drawing.Size(58, 13);
-            this.Nuka_Int.TabIndex = 3;
-            this.Nuka_Int.Text = "Nuka: zahl";
+            this.tb_stock4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_stock4.AutoSize = true;
+            this.tb_stock4.Location = new System.Drawing.Point(1071, 174);
+            this.tb_stock4.Name = "tb_stock4";
+            this.tb_stock4.Size = new System.Drawing.Size(53, 13);
+            this.tb_stock4.TabIndex = 3;
+            this.tb_stock4.Text = "Filler: zahl";
             // 
-            // Chumvi_Int
+            // tb_stock5
             // 
-            this.Chumvi_Int.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Chumvi_Int.AutoSize = true;
-            this.Chumvi_Int.Location = new System.Drawing.Point(1071, 210);
-            this.Chumvi_Int.Name = "Chumvi_Int";
-            this.Chumvi_Int.Size = new System.Drawing.Size(93, 13);
-            this.Chumvi_Int.TabIndex = 4;
-            this.Chumvi_Int.Text = "Chumvi RGB: zahl";
+            this.tb_stock5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_stock5.AutoSize = true;
+            this.tb_stock5.Location = new System.Drawing.Point(1071, 210);
+            this.tb_stock5.Name = "tb_stock5";
+            this.tb_stock5.Size = new System.Drawing.Size(53, 13);
+            this.tb_stock5.TabIndex = 4;
+            this.tb_stock5.Text = "Filler: zahl";
             // 
             // tB_Worth
             // 
@@ -146,10 +146,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 653);
             this.Controls.Add(this.tB_Worth);
-            this.Controls.Add(this.Chumvi_Int);
-            this.Controls.Add(this.Nuka_Int);
-            this.Controls.Add(this.Uru_Int);
-            this.Controls.Add(this.Mohatu_Int);
+            this.Controls.Add(this.tb_stock5);
+            this.Controls.Add(this.tb_stock4);
+            this.Controls.Add(this.tb_stock3);
+            this.Controls.Add(this.tb_stock2);
             this.Controls.Add(this.chart1);
             this.Name = "Form1";
             this.Text = "Aktien";
@@ -164,10 +164,10 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label Mohatu_Int;
-        private System.Windows.Forms.Label Uru_Int;
-        private System.Windows.Forms.Label Nuka_Int;
-        private System.Windows.Forms.Label Chumvi_Int;
+        private System.Windows.Forms.Label tb_stock2;
+        private System.Windows.Forms.Label tb_stock3;
+        private System.Windows.Forms.Label tb_stock4;
+        private System.Windows.Forms.Label tb_stock5;
         private System.Windows.Forms.TextBox tB_Worth;
     }
 }
