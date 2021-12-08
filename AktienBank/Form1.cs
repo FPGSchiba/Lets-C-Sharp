@@ -24,13 +24,13 @@ namespace AktienBank
         int stock4;
         int stock5;
 
-        int interval = 1000;
+        int interval = 150;
 
         string stock1Name = "None";
-        string stock2Name = "Hi";
-        string stock3Name = "Bye";
-        string stock4Name = "Wyld";
-        string stock5Name = "Mild";
+        string stock2Name = "Rütli Studios";
+        string stock3Name = "Habsburger AG";
+        string stock4Name = "Tell Cop.";
+        string stock5Name = "Gessler Foundation";
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -137,7 +137,7 @@ namespace AktienBank
             chart1.Series[3].Name = stock5Name;
 
             //TODO: change names of stocks with Variables
-            timer.Interval = interval;
+            timer.Interval = interval * 1000;
             stock2 = round(startProg(), 10);
             stock3 = round(startProg(), 10);
             stock4 = round(startProg(), 10);
