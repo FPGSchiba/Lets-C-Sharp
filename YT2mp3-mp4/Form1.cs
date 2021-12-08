@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xabe.FFmpeg;
-using VideoLibrary;
+using YoutubeExplode;
+using YoutubeExplode.Videos.Streams;
 
 namespace YT2mp3_mp4
 {
@@ -87,71 +87,25 @@ namespace YT2mp3_mp4
 
             try
             {
-                string fileForDownload = "";
+                var youtube = new YoutubeClient();
+
+                var video = await youtube.Videos.GetAsync(URL);
+                var title = video.Title;
+
+                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).L_Vtitel.Text = title; }))));
+
+                var streamManifest = await youtube.Videos.Streams.GetManifestAsync(URL);
+                var progressIndicator = new Progress<double>(ReportProgress);
+
                 if (isMP4)
                 {
-                    fileForDownload = savefileNameMP4;
+                    var streamInfo = streamManifest.GetVideoStreams().GetWithHighestVideoQuality();
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, savefileNameMP4, progressIndicator);
                 }
                 else
                 {
-                    fileForDownload = savefileNameMP3.Replace("mp3", "mp4");
-                }
-
-                var youTube = YouTube.Default;
-                var video = youTube.GetVideo(URL);
-                MessageBox.Show(video.Format.ToString());
-                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => {(Application.OpenForms["Form1"] as Form1).L_Vtitel.Text = video.Title; }))));
-                byte[] videoRAW = video.GetBytes();
-
-                using (FileStream stream = File.Open(fileForDownload, FileMode.OpenOrCreate))
-                {
-                    var bytesLeft = videoRAW.Length;
-                    var bytesWritten = 0;
-                    while (bytesLeft > 0)
-                    {
-                        var chunkSize = Math.Min(2048, bytesLeft);
-                        await stream.WriteAsync(videoRAW, bytesWritten, chunkSize);
-                        bytesWritten += chunkSize;
-                        bytesLeft -= chunkSize;
-
-                        try
-                        {
-                            if (!isMP4)
-                            {
-                                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 50 / videoRAW.Length; } catch { } }))));
-                            }
-                            else
-                            {
-                                await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { try { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = bytesWritten * 100 / videoRAW.Length; } catch { } }))));
-                            }
-
-                        }
-                        catch (Exception e)
-                        {
-                            MessageBox.Show(e.Message);
-                        }
-                       
-                    }
-                }
-
-                if (!isMP4)
-                {
-                    var mediaInfo = await MediaInfo.Get(fileForDownload);
-                    var audioStream = mediaInfo.AudioStreams.First();
-                    var conversion = Conversion.New()
-                    .AddStream(audioStream)
-                    .SetOutput(savefileNameMP3)
-                    .SetOverwriteOutput(true)
-                    .UseMultiThread(true)
-                    .SetPreset(ConversionPreset.UltraFast);
-                    conversion.OnProgress += async (sender, args) =>
-                    {
-                        await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = Convert.ToInt32(Convert.ToDouble(args.Percent) * 0.5 + 50); }))));
-                    };
-
-                    await conversion.Start();
-
-                    File.Delete(fileForDownload);
+                    var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, savefileNameMP3, progressIndicator);
                 }
 
                 await Task.Run(() => (Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).L_Vtitel.Visible = false; }))));
@@ -162,6 +116,12 @@ namespace YT2mp3_mp4
             {
                 MessageBox.Show(e.Message);
             }
+        }
+
+        private async void ReportProgress(double value)
+        {
+            int progress = (int)(value * 1000);
+            await Task.Run(() => Application.OpenForms["Form1"].Invoke(new Action(() => { (Application.OpenForms["Form1"] as Form1).pB_FileProgress.Value = progress; })));
         }
 
         private void button1_Click(object sender, EventArgs e)

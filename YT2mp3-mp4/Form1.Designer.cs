@@ -60,6 +60,7 @@
             // 
             this.pB_FileProgress.Location = new System.Drawing.Point(11, 41);
             this.pB_FileProgress.Margin = new System.Windows.Forms.Padding(2);
+            this.pB_FileProgress.Maximum = 1000;
             this.pB_FileProgress.Name = "pB_FileProgress";
             this.pB_FileProgress.Size = new System.Drawing.Size(344, 19);
             this.pB_FileProgress.TabIndex = 0;
